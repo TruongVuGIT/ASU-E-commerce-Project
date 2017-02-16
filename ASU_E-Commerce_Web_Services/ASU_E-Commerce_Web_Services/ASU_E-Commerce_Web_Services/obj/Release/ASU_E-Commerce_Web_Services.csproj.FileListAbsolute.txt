@@ -1,0 +1,57 @@
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ApplicationInsights.config
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll.config
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.pdb
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.xml
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.xml
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.csprojResolveAssemblyReference.cache
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.dll
+C:\Users\llwong\Desktop\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.pdb
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ApplicationInsights.config
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll.config
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.pdb
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Agent.Intercept.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.xml
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.xml
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.xml
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.xml
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.csprojResolveAssemblyReference.cache
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.dll
+D:\New folder (2)\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.pdb
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ApplicationInsights.config
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll.config
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\ASU_E-Commerce_Web_Services.pdb
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.Web.xml
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\bin\Microsoft.ApplicationInsights.xml
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.csprojResolveAssemblyReference.cache
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.dll
+C:\Users\leon_\Desktop\Projects\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\ASU_E-Commerce_Web_Services\obj\Release\ASU_E-Commerce_Web_Services.pdb
