@@ -9,7 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="FirstNameLabel" runat="server" Text="First Name"></asp:Label>
+            <asp:Label ID="LastNameLabel" runat="server" Text="Last Name"></asp:Label>
+            <br />
+            <asp:Label ID="AddressLabel" runat="server" Text="Address"></asp:Label>
+            <br />
+            <asp:Label ID="CityLabel" runat="server" Text="City"></asp:Label>
+            <asp:Label ID="StateLabel" runat="server" Text="State"></asp:Label>
+            <asp:Label ID="ZipLabel" runat="server" Text="Zip"></asp:Label>
         </div>
         <asp:Label ID="TotalLabel" runat="server" Text="Total: $"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True">0.00</asp:TextBox>

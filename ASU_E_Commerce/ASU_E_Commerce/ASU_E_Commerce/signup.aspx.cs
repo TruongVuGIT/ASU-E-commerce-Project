@@ -28,7 +28,8 @@ namespace ASU_E_Commerce
                 result = myservice.sign_up(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox6.Text, TextBox7.Text, TextBox9.Text, TextBox10.Text, TextBox11.Text, TextBox12.Text, TextBox13.Text, "", "");
                 if (result == "Pass")
                 {
-                    MessageBox.Show(Page, "Your account has been created");
+                    MessageBox.Show(Page, "Your account has been created. Please sign in.");
+                    Response.Redirect("default1.aspx");
                 }
                 else
                 {

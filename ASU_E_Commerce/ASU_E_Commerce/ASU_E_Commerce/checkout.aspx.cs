@@ -12,12 +12,24 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string userID = "2";
-                //Session["userid"].ToString();
+            
+            //Session["userid"].ToString();
             //NEED TO GET USER ACCOUNT INFORMATION
-            //Label1.Text = myservice.
-            string[] temp = myservice.get_user_info(userID, "", "");
-            Label1.Text = temp[3].ToString();
+            if (Session["loginid"] == null)
+            {
+                Response.Redirect("default1.aspx");
+            }
+
+            string login_id = Session["loginid"].ToString();
+            string user_id = Session["userid"].ToString();
+            string[] info = myservice.get_user_info(user_id, "", "");
+            FirstNameLabel.Text = info[0];
+            LastNameLabel.Text = info[1];
+            AddressLabel.Text = info[5];
+            CityLabel.Text = info[7];
+            StateLabel.Text = info[8];
+            ZipLabel.Text = info[9];
+
 
             //Total Book Amount:
             TextBox1.Text = "100.64";
