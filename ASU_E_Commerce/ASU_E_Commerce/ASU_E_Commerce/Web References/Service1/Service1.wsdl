@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://webstrar48.fulton.asu.edu/Page8/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://webstrar48.fulton.asu.edu/Page8/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://webstrar48.fulton.asu.edu/Page8/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_sign_up_InputMessage">
+    <wsdl:part name="parameters" element="tns:sign_up" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sign_up_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sign_upResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sign_in_InputMessage">
+    <wsdl:part name="parameters" element="tns:sign_in" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sign_in_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sign_inResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_user_info_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_user_info" />
+  </wsdl:message>
+  <wsdl:message name="IService1_get_user_info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_user_infoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_edit_user_info_InputMessage">
+    <wsdl:part name="parameters" element="tns:edit_user_info" />
+  </wsdl:message>
+  <wsdl:message name="IService1_edit_user_info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:edit_user_infoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_add_books_InputMessage">
+    <wsdl:part name="parameters" element="tns:add_books" />
+  </wsdl:message>
+  <wsdl:message name="IService1_add_books_OutputMessage">
+    <wsdl:part name="parameters" element="tns:add_booksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_edit_books_InputMessage">
+    <wsdl:part name="parameters" element="tns:edit_books" />
+  </wsdl:message>
+  <wsdl:message name="IService1_edit_books_OutputMessage">
+    <wsdl:part name="parameters" element="tns:edit_booksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_delete_book_InputMessage">
+    <wsdl:part name="parameters" element="tns:delete_book" />
+  </wsdl:message>
+  <wsdl:message name="IService1_delete_book_OutputMessage">
+    <wsdl:part name="parameters" element="tns:delete_bookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_book_details_InputMessage">
+    <wsdl:part name="parameters" element="tns:book_details" />
+  </wsdl:message>
+  <wsdl:message name="IService1_book_details_OutputMessage">
+    <wsdl:part name="parameters" element="tns:book_detailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_search_books_InputMessage">
+    <wsdl:part name="parameters" element="tns:search_books" />
+  </wsdl:message>
+  <wsdl:message name="IService1_search_books_OutputMessage">
+    <wsdl:part name="parameters" element="tns:search_booksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_list_products_InputMessage">
+    <wsdl:part name="parameters" element="tns:list_products" />
+  </wsdl:message>
+  <wsdl:message name="IService1_list_products_OutputMessage">
+    <wsdl:part name="parameters" element="tns:list_productsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="sign_up">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sign_up" message="tns:IService1_sign_up_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sign_upResponse" message="tns:IService1_sign_up_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sign_in">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sign_in" message="tns:IService1_sign_in_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sign_inResponse" message="tns:IService1_sign_in_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_user_info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/get_user_info" message="tns:IService1_get_user_info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/get_user_infoResponse" message="tns:IService1_get_user_info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="edit_user_info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/edit_user_info" message="tns:IService1_edit_user_info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/edit_user_infoResponse" message="tns:IService1_edit_user_info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="add_books">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/add_books" message="tns:IService1_add_books_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/add_booksResponse" message="tns:IService1_add_books_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="edit_books">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/edit_books" message="tns:IService1_edit_books_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/edit_booksResponse" message="tns:IService1_edit_books_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_book">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/delete_book" message="tns:IService1_delete_book_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/delete_bookResponse" message="tns:IService1_delete_book_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="book_details">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/book_details" message="tns:IService1_book_details_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/book_detailsResponse" message="tns:IService1_book_details_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="search_books">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/search_books" message="tns:IService1_search_books_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/search_booksResponse" message="tns:IService1_search_books_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="list_products">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/list_products" message="tns:IService1_list_products_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/list_productsResponse" message="tns:IService1_list_products_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sign_up">
+      <soap:operation soapAction="http://tempuri.org/IService1/sign_up" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sign_in">
+      <soap:operation soapAction="http://tempuri.org/IService1/sign_in" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_user_info">
+      <soap:operation soapAction="http://tempuri.org/IService1/get_user_info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit_user_info">
+      <soap:operation soapAction="http://tempuri.org/IService1/edit_user_info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_books">
+      <soap:operation soapAction="http://tempuri.org/IService1/add_books" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="edit_books">
+      <soap:operation soapAction="http://tempuri.org/IService1/edit_books" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_book">
+      <soap:operation soapAction="http://tempuri.org/IService1/delete_book" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="book_details">
+      <soap:operation soapAction="http://tempuri.org/IService1/book_details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="search_books">
+      <soap:operation soapAction="http://tempuri.org/IService1/search_books" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="list_products">
+      <soap:operation soapAction="http://tempuri.org/IService1/list_products" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://webstrar48.fulton.asu.edu/Page8/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
