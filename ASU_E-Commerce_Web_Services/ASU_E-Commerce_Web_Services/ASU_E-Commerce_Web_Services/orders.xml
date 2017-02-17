@@ -1,8 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <orders>
-  <order>
-    <userid></userid>
-    <orderid></orderid>
-    <productid></productid>
-  </order>
+  <userid id="001">
+    <order orderid="123">
+      <productid quantity="32" price="0.00">B000000005</productid>
+      <date></date>
+    </order>
+    <order orderid="456">
+      <productid quantity="32" price="0.00">B000000007</productid>
+      <productid quantity="32" price="0.00">B000000008</productid>
+      <date></date>
+    </order>
+  </userid>
+  <userid id="002">
+    <order orderid="789">
+      <productid quantiy="1" price="0.00">S000000001</productid>
+      <date></date>
+    </order>
+  </userid>
 </orders>
