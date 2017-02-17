@@ -16,6 +16,8 @@ namespace ASU_E_Commerce_Web_Services
     {
         users myusers = new users();
         books mybooks = new books();
+        shirts myshirts = new shirts();
+
         public string sign_up(string fname, string lname, string pname, string email, string id, string pword, string street1, string street2, string city, string state, string zip, string host_email, string host_credential)
         {
             return myusers.sign_up(fname, lname, pname, email, id, pword, street1, street2, city, state, zip);
@@ -105,6 +107,27 @@ namespace ASU_E_Commerce_Web_Services
                 var hashed_string = sha.ComputeHash(Encoding.Default.GetBytes(data + "9090"));
                 return Convert.ToBase64String(hashed_string);
             }
+        }
+
+
+        public string add_shirts(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string userid, string host_email, string host_credential)
+        {
+            return myshirts.add_shirts(brand, size, color, material, gender, agegroup, quantity, priceperitem, biddingprice, userid);
+        }
+
+        public string edit_shirt(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string image1, string image2, string host_email, string host_credential)
+        {
+            return myshirts.edit_shirt(productid, brand, size, color, material, gender, agegroup, quantity, priceperitem, biddingprice, image1, image2);
+        }
+
+        public string delete_shirt(string productid, string host_email, string host_credential)
+        {
+            return myshirts.delete_shirt(productid);
+        }
+
+        public string[] shirt_details(string productid, string host_email, string host_credential)
+        {
+            return myshirts.shirt_details(productid);
         }
     }
 }

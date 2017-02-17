@@ -91,10 +91,12 @@
     <Content Include="books.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="carts.xml" />
     <Content Include="data.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Service1.svc" />
+    <Content Include="shirts.xml" />
     <Content Include="users.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -104,11 +106,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="books.cs" />
+    <Compile Include="carts.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shirts.cs" />
     <Compile Include="users.cs" />
   </ItemGroup>
   <ItemGroup>

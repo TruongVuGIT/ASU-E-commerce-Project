@@ -41,5 +41,17 @@ namespace ASU_E_Commerce_Web_Services
 
         [OperationContract]
         LinkedList<string> list_products(string id, string host_email, string host_credential);
+
+        [OperationContract]
+        string add_shirts(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string userid, string host_email, string host_credential);
+
+        [OperationContract]
+        string edit_shirt(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string image1, string image2, string host_email, string host_credential);
+
+        [OperationContract]
+        string delete_shirt(string productid, string host_email, string host_credential);
+
+        [OperationContract]
+        string[] shirt_details(string productid, string host_email, string host_credential);
     }
 }
