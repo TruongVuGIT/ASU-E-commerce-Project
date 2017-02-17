@@ -97,3 +97,36 @@ C:\Users\Truong\Desktop\ASU E-commerce Project\ASU_E_Commerce\ASU_E_Commerce\ASU
 C:\Users\Truong\Desktop\ASU E-commerce Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.csprojResolveAssemblyReference.cache
 C:\Users\Truong\Desktop\ASU E-commerce Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.dll
 C:\Users\Truong\Desktop\ASU E-commerce Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.pdb
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.csprojResolveAssemblyReference.cache
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\obj\Debug\ASU_E_Commerce.pdb
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\ApplicationInsights.config
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\csc.exe
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\vbc.exe
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\VBCSCompiler.exe
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\ASU_E_Commerce.dll.config
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\ASU_E_Commerce.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\ASU_E_Commerce.pdb
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.Web.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.ApplicationInsights.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.Web.xml
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.ApplicationInsights.xml
+C:\Users\rbarcen2\Desktop\temp\ASU-E-commerce-Project\ASU_E_Commerce\ASU_E_Commerce\ASU_E_Commerce\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

@@ -53,7 +53,7 @@
         <br />
         <div>
             <div>
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand"></asp:GridView><!--Added OnRowCommand="GridView1_RowCommand" -->
             </div>
         </div>
     </form>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ASU_E_Commerce
 {
@@ -117,10 +118,51 @@ namespace ASU_E_Commerce
                     dt.Rows[x]["To Cart"] = "Add Button";
                 }
 
+                /////////////////////Below works but button is on lft-hand side of each row////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                ButtonField btnfld = new ButtonField();
+
+                btnfld.ButtonType = ButtonType.Button;
+
+                btnfld.Text = "Add to cart";
+
+                btnfld.CommandName = "MyCommand";//specify gridview CommandName for ButtonField to access it in GridView_RowCommand event function below
+
+                btnfld.CausesValidation = false;
+
+                GridView1.Columns.Add(btnfld);
+
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
 
             }
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        protected void GridView1_RowCommand(Object sender, GridViewCommandEventArgs e)//function for btnfld when invoked via "MyCommand". Added OnRowCommand="GridView1_RowCommand" in Markup.
+        {
+            if (e.CommandName == "MyCommand")//All buttons have Same CommandName when Dynamically created, but row index captured below to differentiate buttons
+            {
+                //Can add stuff here to do something
+                //System.Windows.Forms.MessageBox.Show("My message here");//For Testing purposes
+
+                // Convert the row index stored in the CommandArgument
+                // property to an Integer.
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                // Retrieve the row that contains the button clicked 
+                // by the user from the Rows collection.
+                GridViewRow row = GridView1.Rows[index];
+                //Row index captured at this point to do stuff
+                System.Windows.Forms.MessageBox.Show("Product ID: " + row.Cells[2].Text + " and Quantity: " + row.Cells[6].Text);//For Testing purposes
+
+                //Response.Redirect("signin.aspx");//for Testing purposes
+
+            }
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }
