@@ -37,6 +37,7 @@ namespace ASU_E_Commerce
                 TextBox5.Text = "";
                 TextBox6.Text = "";
                 TextBox7.Text = "";
+                Response.Redirect("default.aspx");
             }
             else
             {
