@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="checkout.aspx" />
+    <Content Include="mycart.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="default1.aspx.designer.cs">
       <DependentUpon>default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mycart.aspx.cs">
+      <DependentUpon>mycart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mycart.aspx.designer.cs">
+      <DependentUpon>mycart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
