@@ -27,7 +27,7 @@
             <asp:Button ID="Button1" CssClass="button" runat="server" Text="Sell Products" OnClick="Button1_Click" />
             <div style="float: right">
                 <asp:Button ID="Button2" CssClass="button" runat="server" Text="My Account" OnClick="Button2_Click" />
-                <asp:Button ID="Button3" CssClass="button" runat="server" Text="Shopping Cart" />
+                <asp:Button ID="Button3" CssClass="button" runat="server" Text="Shopping Cart" OnClick="Button3_Click" />
             </div>
             <br style="clear: both" />
             <br />

@@ -11,6 +11,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+        </asp:GridView>  <!-- Added OnRowCommand -->
         <asp:Button ID="Button1" CssClass="button" runat="server" Text="Checkout" OnClick="Button1_Click" />
         <asp:Button ID="Button2" CssClass="button" runat="server" Text="Back" OnClick="Button2_Click" />
     </div>
