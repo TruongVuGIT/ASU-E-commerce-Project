@@ -95,6 +95,7 @@
     <Content Include="data.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="orders.xml" />
     <Content Include="Service1.svc" />
     <Content Include="shirts.xml" />
     <Content Include="users.xml">
