@@ -13,7 +13,7 @@ namespace ASU_E_Commerce_Web_Services
     public class shirts
     {
         // Add Shirt Service --- Done (Dakota)
-        public string add_shirts(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string userid)
+        public string add_shirts(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string userid)
         {
             string image_1 = generate_image_id1();
             string image_2 = generate_image_id2();
@@ -34,8 +34,8 @@ namespace ASU_E_Commerce_Web_Services
                     new XElement("gender", gender),
                     new XElement("agegroup", agegroup),
                     new XElement("quantity", quantity),
-                    new XElement("priceperitem", priceperitem),
-                    new XElement("biddingprice", biddingprice),
+                    new XElement("price", price),
+                    new XElement("bidding", bidding),
                     new XElement("image1", generate_image_id1()),
                     new XElement("image2", generate_image_id2()),
                     new XElement("productid", generate_product_id()),
@@ -163,7 +163,7 @@ namespace ASU_E_Commerce_Web_Services
         }
 
         // Edit Shirt service --- Done [ possibly remove price adjustment? ] (Dakota)
-        public string edit_shirt(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string priceperitem, string biddingprice, string image1, string image2)
+        public string edit_shirt(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string image1, string image2)
         {
             string result = "Fail";
 
@@ -185,8 +185,8 @@ namespace ASU_E_Commerce_Web_Services
                     node.SelectSingleNode("gender").InnerText = gender;
                     node.SelectSingleNode("agegroup").InnerText = agegroup;
                     node.SelectSingleNode("quantity").InnerText = quantity;
-                    node.SelectSingleNode("priceperitem").InnerText = priceperitem;
-                    node.SelectSingleNode("biddingprice").InnerText = biddingprice;
+                    node.SelectSingleNode("price").InnerText = price;
+                    node.SelectSingleNode("bidding").InnerText = bidding;
                     node.SelectSingleNode("image1").InnerText = image1;
                     node.SelectSingleNode("image2").InnerText = image2;
 
@@ -256,8 +256,8 @@ namespace ASU_E_Commerce_Web_Services
                     details[5] = node.SelectSingleNode("gender").InnerText;
                     details[6] = node.SelectSingleNode("agegroup").InnerText;
                     details[7] = node.SelectSingleNode("quantity").InnerText;
-                    details[8] = node.SelectSingleNode("priceperitem").InnerText;
-                    details[9] = node.SelectSingleNode("biddingprice").InnerText;
+                    details[8] = node.SelectSingleNode("price").InnerText;
+                    details[9] = node.SelectSingleNode("bidding").InnerText;
                     details[10] = node.SelectSingleNode("image1").InnerText;
                     details[11] = node.SelectSingleNode("image2").InnerText;
                     details[12] = node.SelectSingleNode("userid").InnerText;

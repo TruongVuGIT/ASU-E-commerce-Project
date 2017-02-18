@@ -8,8 +8,8 @@
     <gender></gender>
     <agegroup></agegroup>
     <quantity></quantity>
-    <priceperitem></priceperitem>
-    <biddingprice></biddingprice>
+    <price></price>
+    <bidding></bidding>
     <image1></image1>
     <image2></image2>
     <productid></productid>
