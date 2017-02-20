@@ -40,7 +40,7 @@ namespace ASU_E_Commerce
                     dt.Rows[x]["Price per item"] = tempItem[3];
                     dt.Rows[x]["Total"] = tempItem[4];
                 }
-
+                /*
                 /////////////////////Below works but button is on lft-hand side of each row////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ButtonField btnfld = new ButtonField();
@@ -56,7 +56,7 @@ namespace ASU_E_Commerce
                 GridView1.Columns.Add(btnfld);
 
                 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+                */
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }

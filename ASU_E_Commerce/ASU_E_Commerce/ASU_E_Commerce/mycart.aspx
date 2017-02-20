@@ -24,6 +24,11 @@
         </div>
     <div>
         <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+            <Columns>
+                <asp:ButtonField ButtonType="Button" CommandName="MyCommand" HeaderText="Item Info" Text="Description">
+                <HeaderStyle HorizontalAlign="Right" />
+                </asp:ButtonField>
+            </Columns>
         </asp:GridView>  <!-- Added OnRowCommand -->
         <asp:Button ID="Button1" CssClass="button" runat="server" Text="Checkout" OnClick="Button1_Click" />
         <asp:Button ID="Button2" CssClass="button" runat="server" Text="Back" OnClick="Button2_Click" />
