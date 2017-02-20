@@ -32,7 +32,7 @@ namespace ASU_E_Commerce_Web_Services
                     new XElement("lname", lname),
                     new XElement("pname", pname),
                     new XElement("email", email),
-                    new XElement("loginid", id),
+                    new XElement("loginid", id.ToLower()),
                     new XElement("password", hash(pword)),
                     new XElement("streetaddress1", street1),
                     new XElement("streetaddress2", street2),
@@ -41,6 +41,8 @@ namespace ASU_E_Commerce_Web_Services
                     new XElement("zipcode", zip),
                     new XElement("userid", user_id)));
                 xml.Save(file_location);
+
+                add_cart(user_id);
 
                 result = "Pass";
             }
@@ -80,7 +82,7 @@ namespace ASU_E_Commerce_Web_Services
                 string login_id = node.SelectSingleNode("loginid").InnerText;
                 string password = node.SelectSingleNode("password").InnerText;
                 string user_id = node.SelectSingleNode("userid").InnerText;
-                if (login_id == id && password.Substring(0, 88) == hash(pword))
+                if (login_id.ToLower() == id.ToLower() && password.Substring(0, 88) == hash(pword))
                 {
                     result[0] = login_id;
                     result[1] = user_id;
@@ -395,6 +397,14 @@ namespace ASU_E_Commerce_Web_Services
         private string check_validity(string fname, string lname, string pname, string email, string id, string pword, string street1, string street2, string city, string state, string zip)
         {
             return null;
+        }
+
+        private void add_cart(string userid)
+        {
+            string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
+            XElement xml = XElement.Load(file_location);
+            xml.Add(new XElement("cart", new XAttribute("userid", userid)));
+            xml.Save(file_location);
         }
 
     }
