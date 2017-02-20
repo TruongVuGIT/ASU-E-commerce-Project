@@ -52,6 +52,7 @@
                 </div>
             </div>
         </div>
+
         <div>
         </div>
             <asp:Label ID="FirstNameLabel" runat="server" Text="First Name"></asp:Label>
@@ -65,6 +66,20 @@
         </div>
         <asp:Label ID="TotalLabel" runat="server" Text="Total: $"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" ReadOnly="True">0.00</asp:TextBox>
+        <br />
+        <br />
+        <asp:ImageButton
+    ID="PayPalBtn"
+    runat="server"
+    ImageUrl="https://www.paypalobjects.com/en_GB/i/btn/btn_buynow_LG.gif"
+    onclick="PayPalBtn_Click" />
+
+        <br />
+        <br /> 
+        <asp:Button ID="Button1" CssClass="button" runat="server" Text="Back" OnClick="Button1_Click" />
+
+
+        <!---
   <input type="hidden" name="cmd" value="_xclick"/>
   <input type="hidden" name="business" value="cseecommerce@gmail.com"/>
   <input type="hidden" name="currency_code" value="USD"/>
@@ -74,7 +89,9 @@
         <br />
                                         <asp:Button ID="Button1" CssClass="button" runat="server" Text="Back" OnClick="Button1_Click" />
 
-&nbsp;<script>
+        <br />
+        <br />
+        <script>
             function myFunction()
             {
                 var textbox = document.getElementById('TextBox1');
@@ -82,8 +99,8 @@
                 document._xclick.amount.value = textboxvalue
             }
     </script>
-        <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"          name="submit" alt="Make payments with PayPal - it's fast, free and secure!"/>
-
+        &nbsp;<input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"          name="submit" alt="Make payments with PayPal - it's fast, free and secure!"/>
+            --->
     </form>
     </body>
 </html>

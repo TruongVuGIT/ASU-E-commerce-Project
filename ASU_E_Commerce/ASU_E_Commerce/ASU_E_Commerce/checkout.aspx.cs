@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
 
 namespace ASU_E_Commerce
 {
@@ -38,6 +39,24 @@ namespace ASU_E_Commerce
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("mycart.aspx");
+        }
+
+        protected void PayPalBtn_Click(object sender, ImageClickEventArgs e)
+        {
+            string business = "cseecommerce@gmail.com";
+            string itemName = "Java 101";
+            double itemAmount = Convert.ToDouble(TextBox1.Text);
+            string currencyCode = "USD";
+
+            StringBuilder ppHref = new StringBuilder();
+
+            ppHref.Append("https://www.paypal.com/cgi-bin/webscr?cmd=_xclick");
+            ppHref.Append("&business=" + business);
+            ppHref.Append("&item_name=" + itemName);
+            ppHref.Append("&amount=" + itemAmount.ToString("#.00"));
+            ppHref.Append("&currency_code=" + currencyCode);
+
+            Response.Redirect(ppHref.ToString(), true);
         }
     }
 }
