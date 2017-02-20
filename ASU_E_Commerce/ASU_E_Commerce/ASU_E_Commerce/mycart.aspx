@@ -10,6 +10,18 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="top_border">
+            <div>
+                <div>
+                    <div style="font-family:'Arial'">
+                    <h1>
+                <img src="Content/sparky.png" width="150" height="150" style="float: left" />&nbsp ASU E-COMMERCE  <img src="Content/Innovation.png" width="175" height="175" style="float: right" /></h1>
+                    <h2>&nbsp Checkout</h2>
+                    <br />
+                    </div>
+                </div>
+            </div>
+        </div>
     <div>
         <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
         </asp:GridView>  <!-- Added OnRowCommand -->

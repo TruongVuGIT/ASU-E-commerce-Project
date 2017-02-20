@@ -89,7 +89,7 @@ namespace ASU_E_Commerce
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("checkout.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

@@ -34,5 +34,10 @@ namespace ASU_E_Commerce
             //Total Book Amount:
             TextBox1.Text = "100.64";
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("mycart.aspx");
+        }
     }
 }
