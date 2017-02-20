@@ -36,7 +36,7 @@ namespace ASU_E_Commerce
             TextBox1.Text = "100.64";
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void BackButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("mycart.aspx");
         }

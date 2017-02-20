@@ -76,7 +76,7 @@
 
         <br />
         <br /> 
-        <asp:Button ID="Button1" CssClass="button" runat="server" Text="Back" OnClick="Button1_Click" />
+        <asp:Button ID="BackButton" CssClass="button" runat="server" Text="Back" OnClick="BackButton_Click" />
 
 
         <!---

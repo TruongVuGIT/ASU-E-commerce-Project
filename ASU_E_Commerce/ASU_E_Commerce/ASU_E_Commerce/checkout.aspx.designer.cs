@@ -103,15 +103,14 @@ namespace ASU_E_Commerce {
         protected global::System.Web.UI.WebControls.ImageButton PayPalBtn;
         
         /// <summary>
-        /// Button1 control.
+        /// BackButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button BackButton;
         
-        /*
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -120,7 +119,5 @@ namespace ASU_E_Commerce {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        */
     }
-    
 }
