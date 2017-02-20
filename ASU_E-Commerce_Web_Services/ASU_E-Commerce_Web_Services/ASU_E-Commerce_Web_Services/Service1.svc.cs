@@ -17,6 +17,7 @@ namespace ASU_E_Commerce_Web_Services
         users myusers = new users();
         books mybooks = new books();
         shirts myshirts = new shirts();
+        carts mycarts = new carts();
 
         public string sign_up(string fname, string lname, string pname, string email, string id, string pword, string street1, string street2, string city, string state, string zip, string host_email, string host_credential)
         {
@@ -129,5 +130,32 @@ namespace ASU_E_Commerce_Web_Services
         {
             return myshirts.shirt_details(productid);
         }
+
+        public string add_cart(string userid, string productid, string quantity, string host_email, string host_credential)
+        {
+            return mycarts.add_cart(userid, productid, quantity);
+        }
+
+        public bool checkProductExists(string productid, string host_email, string host_credential)
+        {
+            return mycarts.checkProductExists(productid);
+        }
+
+        public string checkCurrentQuantity(string productid, string quantity, string host_email, string host_credential)
+        {
+            return mycarts.checkCurrentQuantity(productid, quantity);
+        }
+
+        public string checkCurrentPrice(string productid, string price, string host_email, string host_credential)
+        {
+            return mycarts.checkCurrentPrice(productid, price);
+        }
+
+        /*
+        public string[,] listCartProducts(string userid, string host_email, string host_credential)
+        {
+            return mycarts.listCartProducts(userid);
+        }
+        */
     }
 }

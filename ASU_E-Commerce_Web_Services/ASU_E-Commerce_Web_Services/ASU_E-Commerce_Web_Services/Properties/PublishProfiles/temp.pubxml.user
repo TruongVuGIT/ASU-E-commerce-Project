@@ -6,56 +6,65 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\leon_\Desktop</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\llwong\Desktop\WebServices</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
-      <publishTime>01/19/2017 21:47:16</publishTime>
+      <publishTime>02/20/2017 11:13:24</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>01/19/2017 21:47:16</publishTime>
+      <publishTime>02/20/2017 11:13:24</publishTime>
     </File>
     <File Include="bin/ASU_E-Commerce_Web_Services.dll">
-      <publishTime>02/06/2017 10:49:06</publishTime>
+      <publishTime>02/20/2017 11:49:41</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>11/30/2016 16:07:42</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>12/07/2016 11:45:42</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>12/07/2016 11:50:34</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>12/06/2016 15:15:48</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>12/07/2016 11:49:10</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>12/07/2016 11:50:34</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>12/06/2016 15:09:52</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="books.xml">
-      <publishTime>02/05/2017 00:59:10</publishTime>
+      <publishTime>02/20/2017 11:13:24</publishTime>
+    </File>
+    <File Include="carts.xml">
+      <publishTime>02/20/2017 11:20:01</publishTime>
     </File>
     <File Include="data.xml">
-      <publishTime>02/05/2017 00:59:10</publishTime>
+      <publishTime>02/20/2017 11:13:24</publishTime>
+    </File>
+    <File Include="orders.xml">
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>01/19/2017 21:47:16</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="Service1.svc">
-      <publishTime>01/19/2017 21:47:06</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
+    </File>
+    <File Include="shirts.xml">
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="users.xml">
-      <publishTime>02/05/2017 14:08:32</publishTime>
+      <publishTime>02/20/2017 11:13:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/16/2017 13:46:25</publishTime>
+      <publishTime>02/20/2017 11:41:02</publishTime>
     </File>
   </ItemGroup>
 </Project>

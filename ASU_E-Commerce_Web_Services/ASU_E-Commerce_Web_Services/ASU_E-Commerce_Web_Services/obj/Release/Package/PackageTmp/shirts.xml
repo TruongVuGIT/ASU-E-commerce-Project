@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<shirts>
+  <shirt>
+    <brand></brand>
+    <size></size>
+    <color></color>
+    <material></material>
+    <gender></gender>
+    <agegroup></agegroup>
+    <quantity></quantity>
+    <price></price>
+    <bidding></bidding>
+    <image1></image1>
+    <image2></image2>
+    <productid></productid>
+    <userid></userid>
+  </shirt>
+</shirts>

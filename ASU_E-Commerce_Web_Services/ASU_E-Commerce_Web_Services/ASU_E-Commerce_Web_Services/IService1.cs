@@ -53,5 +53,22 @@ namespace ASU_E_Commerce_Web_Services
 
         [OperationContract]
         string[] shirt_details(string productid, string host_email, string host_credential);
+
+        [OperationContract]
+        string add_cart(string userid, string productid, string quantity, string host_email, string host_credential);
+
+        [OperationContract]
+        bool checkProductExists(string productid, string host_email, string host_credential);
+
+        [OperationContract]
+        string checkCurrentQuantity(string productid, string quantity, string host_email, string host_credential);
+
+        [OperationContract]
+        string checkCurrentPrice(string productid, string price, string host_email, string host_credential);
+
+        /*
+        [OperationContract]
+        string[,] listCartProducts(string userid, string host_email, string host_credential);
+        */
     }
 }
