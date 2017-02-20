@@ -1,6 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <carts>
+  <cart userid="1">
+    <productid quantity="2">B000000001</productid>
+  </cart>
   <cart userid="2">
-    <productid quantity="32">B000000007</productid>
+    <productid quantity="32">B000000002</productid>
+    <productid quantity="55">B000000001</productid>
+    <productid quantity="2">B000000003</productid>
   </cart>
 </carts>

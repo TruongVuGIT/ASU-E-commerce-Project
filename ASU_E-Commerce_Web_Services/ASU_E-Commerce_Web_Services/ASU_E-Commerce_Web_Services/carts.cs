@@ -11,14 +11,52 @@ namespace ASU_E_Commerce_Web_Services
     {
         public string add_cart(string userid, string productid, string quantity)
         {
+            string result = "";
+            bool productid_found = false;
 
             string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
-            XElement xml = XElement.Load(file_location);
-            xml.Add(new XElement("cart", new XAttribute("userid", userid),
-                new XElement("productid", new XAttribute("quantity", quantity), productid)));
-            xml.Save(file_location);
 
-            return "pass";
+            XmlDocument xml = new XmlDocument();
+            xml.Load(file_location);
+
+            foreach (XmlNode node in xml.SelectNodes("//cart"))
+            {
+                string user = node.Attributes["userid"].Value;
+                if (user == userid)
+                {
+                    foreach (XmlNode innernode in node.ChildNodes)
+                    {
+                        if (innernode.FirstChild.Value == productid)
+                        {
+                            int value = Convert.ToInt32(innernode.Attributes["quantity"].Value);
+                            innernode.Attributes["quantity"].Value = Convert.ToString(value + 1);
+                            xml.Save(file_location);
+                            productid_found = true;
+                            result = productid + " has been added to your shopping cart.";
+                            break;
+                        }
+                        else
+                        {
+                            productid_found = false;
+                        }
+                    }
+                    if (productid_found == false)
+                    {
+                        XmlElement elem = xml.CreateElement("productid");
+                        elem.InnerText = productid;
+                        elem.SetAttribute("quantity", quantity);
+                        node.AppendChild(elem);
+                        xml.Save(file_location);
+                        result = productid + " has been added to your shopping cart.";
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            return result;
         }
 
         // function to used to check if a given product is still available
