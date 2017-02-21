@@ -7,6 +7,11 @@
    <link rel="icon" href="https://www.asu.edu/sites/all/themes/asu_home/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 31px;
+        }
+    </style>
 </head>
 <body class="main_body">
     <form id="form1" runat="server">
@@ -78,10 +83,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-style1">
                                 Title
                             </td>
-                            <td>
+                            <td class="auto-style1">
                                 <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
                             </td>
                         </tr>

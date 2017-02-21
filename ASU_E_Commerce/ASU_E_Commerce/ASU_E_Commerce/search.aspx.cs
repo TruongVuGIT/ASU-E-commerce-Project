@@ -107,7 +107,7 @@ namespace ASU_E_Commerce
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)//view details button
         {
             if (ListBox1.SelectedIndex >= 0)
             {
@@ -133,7 +133,7 @@ namespace ASU_E_Commerce
             }
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e)// add to cart button
         {
             string user_id = Session["userid"].ToString();
             if (Label8.Text != "" && user_id!= null)
