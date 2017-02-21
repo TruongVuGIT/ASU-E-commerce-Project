@@ -11,7 +11,20 @@ namespace ASU_E_Commerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             if (Session["loginid"] != null || Session["userid"] != null)
+            {
+                Response.Redirect("default.aspx");
+            }
+            */
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
+            {
+                //Response.Redirect("default.aspx");
+
+            }
+            else
             {
                 Response.Redirect("default.aspx");
             }

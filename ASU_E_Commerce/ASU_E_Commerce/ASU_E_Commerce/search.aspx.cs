@@ -14,8 +14,8 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (Session["userid"]== null)
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
                 Button3.Visible = false;
             }
@@ -135,7 +135,11 @@ namespace ASU_E_Commerce
 
         protected void Button3_Click(object sender, EventArgs e)// add to cart button
         {
-            string user_id = Session["userid"].ToString();
+            //string user_id = Session["userid"].ToString();
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+
             if (Label8.Text != "" && user_id!= null)
             {
                 int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);

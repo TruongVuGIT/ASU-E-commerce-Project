@@ -29,7 +29,7 @@ namespace ASU_E_Commerce
                 if (result == "Pass")
                 {
                     MessageBox.Show(Page, "Your account has been created. Please sign in.");
-                    Response.Redirect("default1.aspx");
+                    Response.Redirect("signin.aspx");
                 }
                 else
                 {

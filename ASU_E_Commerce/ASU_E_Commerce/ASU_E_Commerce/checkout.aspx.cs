@@ -13,16 +13,21 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             //Session["userid"].ToString();
             //NEED TO GET USER ACCOUNT INFORMATION
-            if (Session["loginid"] == null)
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
                 Response.Redirect("default1.aspx");
             }
 
-            string login_id = Session["loginid"].ToString();
-            string user_id = Session["userid"].ToString();
+            //string login_id = Session["loginid"].ToString();
+            //string user_id = Session["userid"].ToString();
+
+            string login_id = myCookies["login_id"];
+            string user_id = myCookies["user_id"];
+
             string[] info = myservice.get_user_info(user_id, "", "");
             FirstNameLabel.Text = info[0];
             LastNameLabel.Text = info[1];

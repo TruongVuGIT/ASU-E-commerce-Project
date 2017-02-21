@@ -12,7 +12,21 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             if (Session["loginid"] != null || Session["userid"] != null)
+            {
+                Response.Redirect("default.aspx");
+            }
+            */
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            //if ((myCookies == null) || (myCookies["userid"] == ""))
+            if ((myCookies == null) || myCookies["userid"] == "")
+            {
+                //Response.Redirect("default1.aspx");
+
+            }
+            else
             {
                 Response.Redirect("default.aspx");
             }
@@ -29,8 +43,17 @@ namespace ASU_E_Commerce
 
             if (info[0] != null && info[1] != null)
             {
+                //Session["loginid"] = info[0];
+                //Session["userid"] = info[1]; //hard code
+
                 Session["loginid"] = info[0];
-                Session["userid"] = info[1]; //hard code
+                Session["userid"] = info[1];
+
+                HttpCookie myCookies = new HttpCookie("myCookieId");
+                myCookies["login"] = Session["loginid"].ToString();
+                myCookies["userid"] = Session["userid"].ToString();
+                myCookies.Expires = DateTime.Now.AddMonths(1);
+                Response.Cookies.Add(myCookies);
 
                 Response.Redirect("default.aspx");
             }

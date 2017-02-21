@@ -21,9 +21,10 @@ namespace ASU_E_Commerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginid"] == null || Session["loginid"] == null)
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
-                Response.Redirect("default1.aspx");
+                Response.Redirect("signin.aspx");
             }
         }
 
@@ -34,8 +35,19 @@ namespace ASU_E_Commerce
 
         protected void Button4_Click(object sender, EventArgs e)
         {
+            //Session["userid"] = null;
+            //Session["loginid"] = null;
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            myCookies["userid"] = null;
+            myCookies["loginid"] = null;
+            Response.Cookies.Add(myCookies);
+            myCookies.Expires = DateTime.Now;
+
             Session["userid"] = null;
             Session["loginid"] = null;
+            Session.Abandon();
+
             Response.Redirect("default1.aspx");
         }
 

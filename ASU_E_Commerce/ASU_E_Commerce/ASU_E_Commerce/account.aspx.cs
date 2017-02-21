@@ -13,13 +13,18 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginid"] == null)
+            // if (Session["loginid"] == null)
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
                 Response.Redirect("default1.aspx");
             }
 
-            string login_id = Session["loginid"].ToString();
-            string user_id = Session["userid"].ToString();
+            //string login_id = Session["loginid"].ToString();
+            //string user_id = Session["userid"].ToString();
+
+            string login_id = myCookies["loginid"];
+            string user_id = myCookies["userid"];
 
 
             string[] info = myservice.get_user_info(user_id, "", "");
@@ -49,15 +54,30 @@ namespace ASU_E_Commerce
             string edit = myservice.edit_user_info(user_id, TextBox1.Text, Label3.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, TextBox7.Text, TextBox8.Text, TextBox9.Text, "", "");
             if (edit == "Pass")
             {
-                Session["loginid"] = null;
+                //Session["userid"] = null;
+                //Session["loginid"] = null;
+
+                HttpCookie myCookies = Request.Cookies["myCookieId"];
+                myCookies["userid"] = null;
+                myCookies["loginid"] = null;
+                Response.Cookies.Add(myCookies);
+                myCookies.Expires = DateTime.Now;
+
                 Session["userid"] = null;
+                Session["loginid"] = null;
+                Session.Abandon();
+
                 Response.Redirect("signin.aspx");
             }
         }
 
         private void load_products()
         {
-            string user_id = Session["userid"].ToString();
+            //string user_id = Session["userid"].ToString();
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+
             string[] items = myservice.list_products(user_id,"","");
             DataTable dt = new DataTable();
             dt.Columns.Add("#");

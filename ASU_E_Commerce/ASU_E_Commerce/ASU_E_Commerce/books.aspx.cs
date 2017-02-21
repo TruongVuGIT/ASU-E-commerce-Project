@@ -12,7 +12,10 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginid"] == null)
+            //if (Session["loginid"] == null)
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
                 Response.Redirect("signin.aspx");
             }
@@ -25,7 +28,11 @@ namespace ASU_E_Commerce
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string login_id = Session["loginid"].ToString();
+            //string login_id = Session["loginid"].ToString();
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string login_id = myCookies["login_id"];
+
             string result = myservice.add_books(login_id, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, "", "");
             if (result == "Pass")
             {

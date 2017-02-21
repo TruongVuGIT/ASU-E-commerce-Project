@@ -14,7 +14,10 @@ namespace ASU_E_Commerce
         {
             
             string[] tempItem = { "Java 101", "B00004", "1", "121.00", "121.00" };// this is for testing, need service to get cart info
-            if (Session["loginid"] == null)
+            //if (Session["loginid"] == null)
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
             {
                 Response.Redirect("default1.aspx");
             }
