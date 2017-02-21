@@ -149,7 +149,6 @@
                     <asp:ListItem>8</asp:ListItem>
                     <asp:ListItem>9</asp:ListItem>
                     <asp:ListItem>10</asp:ListItem>
-                    <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp
                 <asp:Button ID="Button3" CssClass="button" runat="server" Text="Add to Cart" OnClick="Button3_Click" />

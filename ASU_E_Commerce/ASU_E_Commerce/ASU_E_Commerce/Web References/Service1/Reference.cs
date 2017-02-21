@@ -49,6 +49,22 @@ namespace ASU_E_Commerce.Service1 {
         
         private System.Threading.SendOrPostCallback list_productsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback add_shirtsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback edit_shirtOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback delete_shirtOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback shirt_detailsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback add_cartOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback checkProductExistsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback checkCurrentQuantityOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback checkCurrentPriceOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -116,6 +132,30 @@ namespace ASU_E_Commerce.Service1 {
         
         /// <remarks/>
         public event list_productsCompletedEventHandler list_productsCompleted;
+        
+        /// <remarks/>
+        public event add_shirtsCompletedEventHandler add_shirtsCompleted;
+        
+        /// <remarks/>
+        public event edit_shirtCompletedEventHandler edit_shirtCompleted;
+        
+        /// <remarks/>
+        public event delete_shirtCompletedEventHandler delete_shirtCompleted;
+        
+        /// <remarks/>
+        public event shirt_detailsCompletedEventHandler shirt_detailsCompleted;
+        
+        /// <remarks/>
+        public event add_cartCompletedEventHandler add_cartCompleted;
+        
+        /// <remarks/>
+        public event checkProductExistsCompletedEventHandler checkProductExistsCompleted;
+        
+        /// <remarks/>
+        public event checkCurrentQuantityCompletedEventHandler checkCurrentQuantityCompleted;
+        
+        /// <remarks/>
+        public event checkCurrentPriceCompletedEventHandler checkCurrentPriceCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sign_up", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -531,6 +571,327 @@ namespace ASU_E_Commerce.Service1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/add_shirts", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string add_shirts([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string brand, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string size, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string color, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string material, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string gender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string agegroup, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string quantity, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string price, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string bidding, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("add_shirts", new object[] {
+                        brand,
+                        size,
+                        color,
+                        material,
+                        gender,
+                        agegroup,
+                        quantity,
+                        price,
+                        bidding,
+                        userid,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void add_shirtsAsync(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string userid, string host_email, string host_credential) {
+            this.add_shirtsAsync(brand, size, color, material, gender, agegroup, quantity, price, bidding, userid, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void add_shirtsAsync(string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string userid, string host_email, string host_credential, object userState) {
+            if ((this.add_shirtsOperationCompleted == null)) {
+                this.add_shirtsOperationCompleted = new System.Threading.SendOrPostCallback(this.Onadd_shirtsOperationCompleted);
+            }
+            this.InvokeAsync("add_shirts", new object[] {
+                        brand,
+                        size,
+                        color,
+                        material,
+                        gender,
+                        agegroup,
+                        quantity,
+                        price,
+                        bidding,
+                        userid,
+                        host_email,
+                        host_credential}, this.add_shirtsOperationCompleted, userState);
+        }
+        
+        private void Onadd_shirtsOperationCompleted(object arg) {
+            if ((this.add_shirtsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.add_shirtsCompleted(this, new add_shirtsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/edit_shirt", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string edit_shirt([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string brand, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string size, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string color, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string material, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string gender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string agegroup, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string quantity, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string price, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string bidding, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string image1, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string image2, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("edit_shirt", new object[] {
+                        productid,
+                        brand,
+                        size,
+                        color,
+                        material,
+                        gender,
+                        agegroup,
+                        quantity,
+                        price,
+                        bidding,
+                        image1,
+                        image2,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void edit_shirtAsync(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string image1, string image2, string host_email, string host_credential) {
+            this.edit_shirtAsync(productid, brand, size, color, material, gender, agegroup, quantity, price, bidding, image1, image2, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void edit_shirtAsync(string productid, string brand, string size, string color, string material, string gender, string agegroup, string quantity, string price, string bidding, string image1, string image2, string host_email, string host_credential, object userState) {
+            if ((this.edit_shirtOperationCompleted == null)) {
+                this.edit_shirtOperationCompleted = new System.Threading.SendOrPostCallback(this.Onedit_shirtOperationCompleted);
+            }
+            this.InvokeAsync("edit_shirt", new object[] {
+                        productid,
+                        brand,
+                        size,
+                        color,
+                        material,
+                        gender,
+                        agegroup,
+                        quantity,
+                        price,
+                        bidding,
+                        image1,
+                        image2,
+                        host_email,
+                        host_credential}, this.edit_shirtOperationCompleted, userState);
+        }
+        
+        private void Onedit_shirtOperationCompleted(object arg) {
+            if ((this.edit_shirtCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.edit_shirtCompleted(this, new edit_shirtCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/delete_shirt", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string delete_shirt([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("delete_shirt", new object[] {
+                        productid,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void delete_shirtAsync(string productid, string host_email, string host_credential) {
+            this.delete_shirtAsync(productid, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void delete_shirtAsync(string productid, string host_email, string host_credential, object userState) {
+            if ((this.delete_shirtOperationCompleted == null)) {
+                this.delete_shirtOperationCompleted = new System.Threading.SendOrPostCallback(this.Ondelete_shirtOperationCompleted);
+            }
+            this.InvokeAsync("delete_shirt", new object[] {
+                        productid,
+                        host_email,
+                        host_credential}, this.delete_shirtOperationCompleted, userState);
+        }
+        
+        private void Ondelete_shirtOperationCompleted(object arg) {
+            if ((this.delete_shirtCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.delete_shirtCompleted(this, new delete_shirtCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/shirt_details", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] shirt_details([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("shirt_details", new object[] {
+                        productid,
+                        host_email,
+                        host_credential});
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void shirt_detailsAsync(string productid, string host_email, string host_credential) {
+            this.shirt_detailsAsync(productid, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void shirt_detailsAsync(string productid, string host_email, string host_credential, object userState) {
+            if ((this.shirt_detailsOperationCompleted == null)) {
+                this.shirt_detailsOperationCompleted = new System.Threading.SendOrPostCallback(this.Onshirt_detailsOperationCompleted);
+            }
+            this.InvokeAsync("shirt_details", new object[] {
+                        productid,
+                        host_email,
+                        host_credential}, this.shirt_detailsOperationCompleted, userState);
+        }
+        
+        private void Onshirt_detailsOperationCompleted(object arg) {
+            if ((this.shirt_detailsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.shirt_detailsCompleted(this, new shirt_detailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/add_cart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string add_cart([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string quantity, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("add_cart", new object[] {
+                        userid,
+                        productid,
+                        quantity,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void add_cartAsync(string userid, string productid, string quantity, string host_email, string host_credential) {
+            this.add_cartAsync(userid, productid, quantity, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void add_cartAsync(string userid, string productid, string quantity, string host_email, string host_credential, object userState) {
+            if ((this.add_cartOperationCompleted == null)) {
+                this.add_cartOperationCompleted = new System.Threading.SendOrPostCallback(this.Onadd_cartOperationCompleted);
+            }
+            this.InvokeAsync("add_cart", new object[] {
+                        userid,
+                        productid,
+                        quantity,
+                        host_email,
+                        host_credential}, this.add_cartOperationCompleted, userState);
+        }
+        
+        private void Onadd_cartOperationCompleted(object arg) {
+            if ((this.add_cartCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.add_cartCompleted(this, new add_cartCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/checkProductExists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void checkProductExists([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential, out bool checkProductExistsResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool checkProductExistsResultSpecified) {
+            object[] results = this.Invoke("checkProductExists", new object[] {
+                        productid,
+                        host_email,
+                        host_credential});
+            checkProductExistsResult = ((bool)(results[0]));
+            checkProductExistsResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void checkProductExistsAsync(string productid, string host_email, string host_credential) {
+            this.checkProductExistsAsync(productid, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void checkProductExistsAsync(string productid, string host_email, string host_credential, object userState) {
+            if ((this.checkProductExistsOperationCompleted == null)) {
+                this.checkProductExistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckProductExistsOperationCompleted);
+            }
+            this.InvokeAsync("checkProductExists", new object[] {
+                        productid,
+                        host_email,
+                        host_credential}, this.checkProductExistsOperationCompleted, userState);
+        }
+        
+        private void OncheckProductExistsOperationCompleted(object arg) {
+            if ((this.checkProductExistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkProductExistsCompleted(this, new checkProductExistsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/checkCurrentQuantity", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string checkCurrentQuantity([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string quantity, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("checkCurrentQuantity", new object[] {
+                        productid,
+                        quantity,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void checkCurrentQuantityAsync(string productid, string quantity, string host_email, string host_credential) {
+            this.checkCurrentQuantityAsync(productid, quantity, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void checkCurrentQuantityAsync(string productid, string quantity, string host_email, string host_credential, object userState) {
+            if ((this.checkCurrentQuantityOperationCompleted == null)) {
+                this.checkCurrentQuantityOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckCurrentQuantityOperationCompleted);
+            }
+            this.InvokeAsync("checkCurrentQuantity", new object[] {
+                        productid,
+                        quantity,
+                        host_email,
+                        host_credential}, this.checkCurrentQuantityOperationCompleted, userState);
+        }
+        
+        private void OncheckCurrentQuantityOperationCompleted(object arg) {
+            if ((this.checkCurrentQuantityCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkCurrentQuantityCompleted(this, new checkCurrentQuantityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/checkCurrentPrice", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string checkCurrentPrice([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string price, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("checkCurrentPrice", new object[] {
+                        productid,
+                        price,
+                        host_email,
+                        host_credential});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void checkCurrentPriceAsync(string productid, string price, string host_email, string host_credential) {
+            this.checkCurrentPriceAsync(productid, price, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void checkCurrentPriceAsync(string productid, string price, string host_email, string host_credential, object userState) {
+            if ((this.checkCurrentPriceOperationCompleted == null)) {
+                this.checkCurrentPriceOperationCompleted = new System.Threading.SendOrPostCallback(this.OncheckCurrentPriceOperationCompleted);
+            }
+            this.InvokeAsync("checkCurrentPrice", new object[] {
+                        productid,
+                        price,
+                        host_email,
+                        host_credential}, this.checkCurrentPriceOperationCompleted, userState);
+        }
+        
+        private void OncheckCurrentPriceOperationCompleted(object arg) {
+            if ((this.checkCurrentPriceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.checkCurrentPriceCompleted(this, new checkCurrentPriceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -805,6 +1166,222 @@ namespace ASU_E_Commerce.Service1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void add_shirtsCompletedEventHandler(object sender, add_shirtsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class add_shirtsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal add_shirtsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void edit_shirtCompletedEventHandler(object sender, edit_shirtCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class edit_shirtCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal edit_shirtCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void delete_shirtCompletedEventHandler(object sender, delete_shirtCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class delete_shirtCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal delete_shirtCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void shirt_detailsCompletedEventHandler(object sender, shirt_detailsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class shirt_detailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal shirt_detailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void add_cartCompletedEventHandler(object sender, add_cartCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class add_cartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal add_cartCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void checkProductExistsCompletedEventHandler(object sender, checkProductExistsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkProductExistsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal checkProductExistsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool checkProductExistsResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool checkProductExistsResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void checkCurrentQuantityCompletedEventHandler(object sender, checkCurrentQuantityCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkCurrentQuantityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal checkCurrentQuantityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void checkCurrentPriceCompletedEventHandler(object sender, checkCurrentPriceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class checkCurrentPriceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal checkCurrentPriceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

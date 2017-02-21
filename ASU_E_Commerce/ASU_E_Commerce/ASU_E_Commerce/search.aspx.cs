@@ -14,6 +14,15 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (Session["userid"]== null)
+            {
+                Button3.Visible = false;
+            }
+            else
+            {
+                Button3.Visible = true;
+            }
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
