@@ -71,98 +71,71 @@ namespace ASU_E_Commerce
                 DropDownList5.Visible = false;
             }
         }
-
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedValue == "Books")
             {
+                ListBox1.Items.Clear();
                 string[] items = myservice.search_books(DropDownList2.SelectedValue, TextBox1.Text, "", "");
-
-                //TableRow tempRow = new TableRow();
-                //for (int x = 0; x < items.Length; x++)
-                //{
-                //    TableCell tempCell = new TableCell();
-                //    tempCell.Text = String.Format("{0}){1}\n", x + 1, items[x]);
-                //    tempRow.Cells.Add(tempCell);
-                //    Table1.Rows.Add(tempRow);
-                //}
-
-                DataTable dt = new DataTable();
-                dt.Columns.Add("#");
-                dt.Columns.Add("Product ID");
-                dt.Columns.Add("ISBN");
-                dt.Columns.Add("Title");
-                dt.Columns.Add("Subject");
-                dt.Columns.Add("Qty");
-                dt.Columns.Add("Price");
-                dt.Columns.Add("Bidding");
-                dt.Columns.Add("Seller's Name");
-                dt.Columns.Add("Seller's Email");
-                dt.Columns.Add("To Cart");
-
                 for (int x = 0; x < items.Length; x++)
                 {
-                    dt.Rows.Add();
-                    dt.Rows[x]["#"] = (x + 1).ToString();
-                    string[] data = myservice.book_details(items[x],"","");
-                    dt.Rows[x]["Product ID"] = data[0];
-                    dt.Rows[x]["ISBN"] = data[1];
-                    dt.Rows[x]["Title"] = data[2];
-                    dt.Rows[x]["Subject"] = data[3];
-                    dt.Rows[x]["Qty"] = data[4];
-                    dt.Rows[x]["Price"] = data[5];
-                    dt.Rows[x]["Bidding"] = data[6];
+                    //dt.Rows[x]["#"] = (x + 1).ToString();
+                    string[] data = myservice.book_details(items[x], "", "");
+                    string product_id = data[0];
+                    string isbn = data[1];
+                    string title = data[2];
+                    string subject = data[3];
+                    string quantity = data[4];
+                    string price = data[5];
+                    string bidding = data[6];
                     string[] info = myservice.get_user_info(data[7], "", "");
-                    dt.Rows[x]["Seller's Name"] = info[2];
-                    dt.Rows[x]["Seller's Email"] = info[3];
-                    dt.Rows[x]["To Cart"] = "Add Button";
+                    string seller_name = info[2];
+                    string seller_email = info[3];
+                    string result ="Product ID: "+ product_id + " Quantity: " + quantity + " Price: " + price + " Bidding: " + bidding;
+                    ListBox1.Items.Add(result);
                 }
-
-                /////////////////////Below works but button is on lft-hand side of each row////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                ButtonField btnfld = new ButtonField();
-
-                btnfld.ButtonType = ButtonType.Button;
-
-                btnfld.Text = "Add to cart";
-
-                btnfld.CommandName = "MyCommand";//specify gridview CommandName for ButtonField to access it in GridView_RowCommand event function below
-
-                btnfld.CausesValidation = false;
-
-                GridView1.Columns.Add(btnfld);
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-
             }
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        protected void GridView1_RowCommand(Object sender, GridViewCommandEventArgs e)//function for btnfld when invoked via "MyCommand". Added OnRowCommand="GridView1_RowCommand" in Markup.
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            if (e.CommandName == "MyCommand")//All buttons have Same CommandName when Dynamically created, but row index captured below to differentiate buttons
+            if (ListBox1.SelectedIndex >= 0)
             {
-                //Can add stuff here to do something
-                //System.Windows.Forms.MessageBox.Show("My message here");//For Testing purposes
+                string[] items = myservice.search_books(DropDownList2.SelectedValue, TextBox1.Text, "", "");
+                int index = ListBox1.SelectedIndex;
+                string productid = items[index];
+                for (int x = 0; x < items.Length; x++)
+                {
+                    //dt.Rows[x]["#"] = (x + 1).ToString();
+                    string[] data = myservice.book_details(productid, "", "");
+                    Label4.Text = data[0];
+                    Label5.Text = data[1];
+                    Label6.Text = data[2];
+                    Label7.Text = data[3];
+                    Label8.Text = data[4];
+                    Label9.Text = data[5];
+                    Label10.Text = data[6];
+                    string[] info = myservice.get_user_info(data[7], "", "");
+                    Label11.Text = info[2];
+                    Label12.Text = info[3];
 
-                // Convert the row index stored in the CommandArgument
-                // property to an Integer.
-                int index = Convert.ToInt32(e.CommandArgument);
-
-                // Retrieve the row that contains the button clicked 
-                // by the user from the Rows collection.
-                GridViewRow row = GridView1.Rows[index];
-                //Row index captured at this point to do stuff
-                System.Windows.Forms.MessageBox.Show("Product ID: " + row.Cells[2].Text + " and Quantity: " + row.Cells[6].Text);//For Testing purposes
-
-                //Response.Redirect("signin.aspx");//for Testing purposes
-
+                }
             }
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string user_id = Session["userid"].ToString();
+            if (Label8.Text != "" && user_id!= null)
+            {
+                int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);
+                int sold_ammount = Convert.ToInt32(Label8.Text);
+                if (selected_ammount <= sold_ammount)
+                {
+                    myservice.add_cart(user_id, Label4.Text, Convert.ToString(selected_ammount), "", "");
+                }
+            }
+        }
     }
 }
