@@ -115,6 +115,18 @@
   <wsdl:message name="IService1_checkCurrentPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:checkCurrentPriceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_product_list_InputMessage">
+    <wsdl:part name="parameters" element="tns:product_list" />
+  </wsdl:message>
+  <wsdl:message name="IService1_product_list_OutputMessage">
+    <wsdl:part name="parameters" element="tns:product_listResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_quantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:quantity" />
+  </wsdl:message>
+  <wsdl:message name="IService1_quantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:quantityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="sign_up">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sign_up" message="tns:IService1_sign_up_InputMessage" />
@@ -187,6 +199,14 @@
     <wsdl:operation name="checkCurrentPrice">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/checkCurrentPrice" message="tns:IService1_checkCurrentPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/checkCurrentPriceResponse" message="tns:IService1_checkCurrentPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="product_list">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/product_list" message="tns:IService1_product_list_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/product_listResponse" message="tns:IService1_product_list_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="quantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/quantity" message="tns:IService1_quantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/quantityResponse" message="tns:IService1_quantity_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -346,6 +366,24 @@
     </wsdl:operation>
     <wsdl:operation name="checkCurrentPrice">
       <soap:operation soapAction="http://tempuri.org/IService1/checkCurrentPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="product_list">
+      <soap:operation soapAction="http://tempuri.org/IService1/product_list" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="quantity">
+      <soap:operation soapAction="http://tempuri.org/IService1/quantity" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

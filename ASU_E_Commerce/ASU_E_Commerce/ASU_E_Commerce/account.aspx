@@ -128,11 +128,95 @@
                                 </tr>
                             </table>
                         </td>
-                        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <td>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         </td>
-                        <td style="width: 60%">
+                        <td style="vertical-align:top; width: 60%,">
                             <div>
-                                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                                <asp:ListBox ID="ListBox1" runat="server" Height="238px" Width="800px" Font-Size="18"></asp:ListBox>
+                                <br />
+                                <asp:Button ID="Button3" CssClass="button" runat="server" Text="View Details" OnClick="Button3_Click" />
+                                &nbsp&nbsp&nbsp&nbsp
+                                <asp:Button ID="Button4" CssClass="button" runat="server" Text="Edit" OnClick="Button4_Click" />
+                                &nbsp&nbsp&nbsp&nbsp
+                                <asp:Button ID="Button5" CssClass="button" runat="server" Text="Delete" OnClick="Button5_Click" />
+                                <br />
+                                <div>
+                                    <table id="details">
+                        <tr>
+                            <td>
+                                Product ID
+                            </td>
+                            <td>
+                                <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ISBN
+                            </td>
+                            <td>
+                                <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1">
+                                Title
+                            </td>
+                            <td class="auto-style1">
+                                <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subject
+                            </td>
+                            <td>
+                                <asp:Label ID="Label7" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Quantity
+                            </td>
+                            <td>
+                                <asp:Label ID="Label8" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Price
+                            </td>
+                            <td>
+                                <asp:Label ID="Label9" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Bidding Price
+                            </td>
+                            <td>
+                                <asp:Label ID="Label10" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Seller's Name
+                            </td>
+                            <td>
+                                <asp:Label ID="Label11" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Seller's Email&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <asp:Label ID="Label12" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                                </div>
                             </div>
                         </td>
                     </tr>

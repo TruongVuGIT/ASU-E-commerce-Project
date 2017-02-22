@@ -89,7 +89,6 @@ namespace ASU_E_Commerce
                 string[] items = myservice.search_books(DropDownList2.SelectedValue, TextBox1.Text, "", "");
                 for (int x = 0; x < items.Length; x++)
                 {
-                    //dt.Rows[x]["#"] = (x + 1).ToString();
                     string[] data = myservice.book_details(items[x], "", "");
                     string product_id = data[0];
                     string isbn = data[1];

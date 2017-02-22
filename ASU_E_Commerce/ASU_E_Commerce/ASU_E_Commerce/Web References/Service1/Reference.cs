@@ -65,6 +65,10 @@ namespace ASU_E_Commerce.Service1 {
         
         private System.Threading.SendOrPostCallback checkCurrentPriceOperationCompleted;
         
+        private System.Threading.SendOrPostCallback product_listOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback quantityOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -156,6 +160,12 @@ namespace ASU_E_Commerce.Service1 {
         
         /// <remarks/>
         public event checkCurrentPriceCompletedEventHandler checkCurrentPriceCompleted;
+        
+        /// <remarks/>
+        public event product_listCompletedEventHandler product_listCompleted;
+        
+        /// <remarks/>
+        public event quantityCompletedEventHandler quantityCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sign_up", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -892,6 +902,76 @@ namespace ASU_E_Commerce.Service1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/product_list", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] product_list([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
+            object[] results = this.Invoke("product_list", new object[] {
+                        userid,
+                        host_email,
+                        host_credential});
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void product_listAsync(string userid, string host_email, string host_credential) {
+            this.product_listAsync(userid, host_email, host_credential, null);
+        }
+        
+        /// <remarks/>
+        public void product_listAsync(string userid, string host_email, string host_credential, object userState) {
+            if ((this.product_listOperationCompleted == null)) {
+                this.product_listOperationCompleted = new System.Threading.SendOrPostCallback(this.Onproduct_listOperationCompleted);
+            }
+            this.InvokeAsync("product_list", new object[] {
+                        userid,
+                        host_email,
+                        host_credential}, this.product_listOperationCompleted, userState);
+        }
+        
+        private void Onproduct_listOperationCompleted(object arg) {
+            if ((this.product_listCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.product_listCompleted(this, new product_listCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/quantity", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] quantity([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credentials) {
+            object[] results = this.Invoke("quantity", new object[] {
+                        userid,
+                        host_email,
+                        host_credentials});
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void quantityAsync(string userid, string host_email, string host_credentials) {
+            this.quantityAsync(userid, host_email, host_credentials, null);
+        }
+        
+        /// <remarks/>
+        public void quantityAsync(string userid, string host_email, string host_credentials, object userState) {
+            if ((this.quantityOperationCompleted == null)) {
+                this.quantityOperationCompleted = new System.Threading.SendOrPostCallback(this.OnquantityOperationCompleted);
+            }
+            this.InvokeAsync("quantity", new object[] {
+                        userid,
+                        host_email,
+                        host_credentials}, this.quantityOperationCompleted, userState);
+        }
+        
+        private void OnquantityOperationCompleted(object arg) {
+            if ((this.quantityCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.quantityCompleted(this, new quantityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1382,6 +1462,58 @@ namespace ASU_E_Commerce.Service1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void product_listCompletedEventHandler(object sender, product_listCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class product_listCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal product_listCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void quantityCompletedEventHandler(object sender, quantityCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class quantityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal quantityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }

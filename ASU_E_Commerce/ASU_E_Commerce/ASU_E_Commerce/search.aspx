@@ -65,7 +65,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp
                 <br />
                 <div>
-                    <table id="details">
+                    <table id="details" style="font-size:28px";>
                         <tr>
                             <td>
                                 Product ID

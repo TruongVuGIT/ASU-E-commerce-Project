@@ -39,7 +39,10 @@ namespace ASU_E_Commerce
             TextBox8.Text = info[8];
             TextBox9.Text = info[9];
 
-            load_products();
+            if (!IsPostBack)
+            {
+                load_products();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -73,43 +76,79 @@ namespace ASU_E_Commerce
 
         private void load_products()
         {
-            //string user_id = Session["userid"].ToString();
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+
+            string[] items = myservice.list_products(user_id, "", "");
+
+            for (int x = 0; x < items.Length; x++)
+            {
+                string[] data = myservice.book_details(items[x], "", "");
+                string product_id = data[0];
+                string isbn = data[1];
+                string title = data[2];
+                string subject = data[3];
+                string quantity = data[4];
+                string price = data[5];
+                string bidding = data[6];
+                string[] info = myservice.get_user_info(data[7], "", "");
+                string seller_name = info[2];
+                string seller_email = info[3];
+                string result = "Product ID: " + product_id + " Quantity: " + quantity + " Price: " + price + " Bidding: " + bidding;
+                ListBox1.Items.Add(result);
+            }
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            int position = ListBox1.SelectedIndex;
 
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
 
-            string[] items = myservice.list_products(user_id,"","");
-            DataTable dt = new DataTable();
-            dt.Columns.Add("#");
-            dt.Columns.Add("Product ID");
-            dt.Columns.Add("Qty");
-            dt.Columns.Add("Price");
-            dt.Columns.Add("Bidding");
-            dt.Columns.Add("Edit");
-            dt.Columns.Add("Delete");
+            string[] item = myservice.list_products(user_id, "", "");
 
-            for (int x = 0; x < items.Length; x++)
+            string[] datas = myservice.book_details(item[position], "", "");
+            string productid = datas[0];
+
+            if (position >= 0)
             {
-                dt.Rows.Add();
-                dt.Rows[x]["#"] = (x + 1).ToString();
-                dt.Rows[x]["Product ID"] = items[x];
-                if (items[x][0] == 'B')
-                {
-                    string[] data = myservice.book_details(items[x],"","");
-                    dt.Rows[x]["Qty"] = data[4];
-                    dt.Rows[x]["Price"] = data[5];
-                    dt.Rows[x]["Bidding"] = data[6];
-                }
-                else
-                {
-
-                }
-
-                dt.Rows[x]["Edit"] = "Edit Button";
-                dt.Rows[x]["Delete"] = "Delete Button";
+                string[] data = myservice.book_details(productid, "", "");
+                Label4.Text = data[0];
+                Label5.Text = data[1];
+                Label6.Text = data[2];
+                Label7.Text = data[3];
+                Label8.Text = data[4];
+                Label9.Text = data[5];
+                Label10.Text = data[6];
+                string[] info = myservice.get_user_info(data[7], "", "");
+                Label11.Text = info[2];
+                Label12.Text = info[3];
             }
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            int position = ListBox1.SelectedIndex;
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+
+            string[] item = myservice.list_products(user_id, "", "");
+
+            string[] datas = myservice.book_details(item[position], "", "");
+            string productid = datas[0];
+
+            if (position >= 0)
+            {
+                myservice.delete_book(productid, "", "");
+            }
+            Response.Redirect("account.aspx");
         }
     }
 }

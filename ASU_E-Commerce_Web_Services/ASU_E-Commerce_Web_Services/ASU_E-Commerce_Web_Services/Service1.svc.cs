@@ -75,6 +75,16 @@ namespace ASU_E_Commerce_Web_Services
             return myusers.list_products(id);
         }
 
+        public LinkedList<string> product_list(string userid, string host_email, string host_credential)
+        {
+            return mycarts.product_list(userid);
+        }
+
+        public LinkedList<string> quantity(string userid, string host_email, string host_credential)
+        {
+            return mycarts.quantity(userid);
+        }
+
         //private functions
         private bool user_authentication(string email, string cred)
         {

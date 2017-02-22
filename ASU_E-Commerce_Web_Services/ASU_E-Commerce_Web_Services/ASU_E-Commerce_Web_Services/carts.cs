@@ -127,7 +127,7 @@ namespace ASU_E_Commerce_Web_Services
                     result = false;
                 }
             }
-            
+
             // return the result of the search
             return result;
         }
@@ -208,7 +208,7 @@ namespace ASU_E_Commerce_Web_Services
                 else
                 {
                     // product not found - continue looping
-                    
+
                 }
             }
             return updatedQuantity;
@@ -302,7 +302,7 @@ namespace ASU_E_Commerce_Web_Services
         public string[,] listCartProducts(string userid)
         {
             // create new variable to hold all cart information
-            string[,] cart = new string[50,12];
+            string[,] cart = new string[50, 12];
 
             // set the filepath
             string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
@@ -323,14 +323,14 @@ namespace ASU_E_Commerce_Web_Services
 
                     // initialize variables to keep track of position in 2d array
                     int x = 0;
-                    
+
                     // loop through each child node
                     foreach (XmlNode child in node.ChildNodes)
                     {
                         // get the product id
                         string tempid = child.SelectSingleNode("productid").InnerText;
                         // set the product id
-                        cart[x,0] = tempid;
+                        cart[x, 0] = tempid;
 
                         // get the title or brand
 
@@ -342,7 +342,7 @@ namespace ASU_E_Commerce_Web_Services
 
                         // get the price
                         string tempprice = child.Attributes["price"].Value;
-                        
+
                         // set the price value to the cart at [x, 2]
                         cart[x, 2] = tempprice;
 
@@ -361,6 +361,53 @@ namespace ASU_E_Commerce_Web_Services
 
             return cart;
 
+        }
+
+        public LinkedList<string> product_list(string userid)
+        {
+            LinkedList<string> list = new LinkedList<string>();
+
+            string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
+
+            XmlDocument xml = new XmlDocument();
+            xml.Load(file_location);
+
+            foreach (XmlNode node in xml.SelectNodes("//cart"))
+            {
+                string user = node.Attributes["userid"].Value;
+                if (user == userid)
+                {
+                    foreach (XmlNode innernode in node.ChildNodes)
+                    {
+                        list.AddLast(innernode.FirstChild.Value);
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        public LinkedList<string> quantity(string userid)
+        {
+            LinkedList<string> list = new LinkedList<string>();
+
+            string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
+
+            XmlDocument xml = new XmlDocument();
+            xml.Load(file_location);
+
+            foreach (XmlNode node in xml.SelectNodes("//cart"))
+            {
+                string user = node.Attributes["userid"].Value;
+                if (user == userid)
+                {
+                    foreach (XmlNode innernode in node.ChildNodes)
+                    {
+                        list.AddLast(innernode.Attributes["quantity"].Value);
+                    }
+                }
+            }
+            return list;
         }
     }
 }

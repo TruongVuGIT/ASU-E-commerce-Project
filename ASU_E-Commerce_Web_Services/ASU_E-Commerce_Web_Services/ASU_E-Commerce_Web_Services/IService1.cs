@@ -66,6 +66,11 @@ namespace ASU_E_Commerce_Web_Services
         [OperationContract]
         string checkCurrentPrice(string productid, string price, string host_email, string host_credential);
 
+        [OperationContract]
+        LinkedList<string> product_list(string userid, string host_email, string host_credential);
+
+        [OperationContract]
+        LinkedList<string> quantity(string userid, string host_email, string host_credentials);
         /*
         [OperationContract]
         string[,] listCartProducts(string userid, string host_email, string host_credential);
