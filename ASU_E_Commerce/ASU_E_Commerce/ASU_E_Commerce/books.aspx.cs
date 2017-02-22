@@ -31,7 +31,7 @@ namespace ASU_E_Commerce
             //string login_id = Session["loginid"].ToString();
 
             HttpCookie myCookies = Request.Cookies["myCookieId"];
-            string login_id = myCookies["login_id"];
+            string login_id = myCookies["loginid"];
 
             string result = myservice.add_books(login_id, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, "", "");
             if (result == "Pass")

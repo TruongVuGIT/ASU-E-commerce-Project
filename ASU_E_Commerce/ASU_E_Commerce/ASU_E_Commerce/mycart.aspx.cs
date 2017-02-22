@@ -19,9 +19,6 @@ namespace ASU_E_Commerce
                 Response.Redirect("default1.aspx");
             }
 
-            //string login_id = Session["loginid"].ToString();
-            //string user_id = Session["userid"].ToString();
-
             string login_id = myCookies["loginid"];
             string user_id = myCookies["userid"];
 
@@ -69,11 +66,6 @@ namespace ASU_E_Commerce
             string user_id = myCookies["userid"];
 
             string[] item = myservice.product_list(user_id, "", "");
-
-            //string[] datas = myservice.book_details(item[position], "", "");
-
-            //string productid = datas[0];
-
             if (position >= 0)
             {
                 string[] data = myservice.book_details(item[position], "", "");

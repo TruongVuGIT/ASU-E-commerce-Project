@@ -25,8 +25,8 @@ namespace ASU_E_Commerce
             //string login_id = Session["loginid"].ToString();
             //string user_id = Session["userid"].ToString();
 
-            string login_id = myCookies["login_id"];
-            string user_id = myCookies["user_id"];
+            string login_id = myCookies["loginid"];
+            string user_id = myCookies["userid"];
 
             string[] info = myservice.get_user_info(user_id, "", "");
             FirstNameLabel.Text = info[0];

@@ -115,7 +115,6 @@ namespace ASU_E_Commerce
                 string productid = items[index];
                 for (int x = 0; x < items.Length; x++)
                 {
-                    //dt.Rows[x]["#"] = (x + 1).ToString();
                     string[] data = myservice.book_details(productid, "", "");
                     Label4.Text = data[0];
                     Label5.Text = data[1];
@@ -134,8 +133,6 @@ namespace ASU_E_Commerce
 
         protected void Button3_Click(object sender, EventArgs e)// add to cart button
         {
-            //string user_id = Session["userid"].ToString();
-
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
 
