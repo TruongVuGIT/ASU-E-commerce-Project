@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="checkout.aspx" />
+    <Content Include="edit_books.aspx" />
     <Content Include="mycart.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -140,7 +141,6 @@
     <Content Include="signin.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="StyleSheet1.css" />
-    <Content Include="Test_Edit_Delete_Books.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +177,13 @@
     </Compile>
     <Compile Include="default1.aspx.designer.cs">
       <DependentUpon>default1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="edit_books.aspx.cs">
+      <DependentUpon>edit_books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edit_books.aspx.designer.cs">
+      <DependentUpon>edit_books.aspx</DependentUpon>
     </Compile>
     <Compile Include="mycart.aspx.cs">
       <DependentUpon>mycart.aspx</DependentUpon>
@@ -218,13 +225,6 @@
     </Compile>
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Test_Edit_Delete_Books.aspx.cs">
-      <DependentUpon>Test_Edit_Delete_Books.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test_Edit_Delete_Books.aspx.designer.cs">
-      <DependentUpon>Test_Edit_Delete_Books.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\Service1\Reference.cs">
       <AutoGen>True</AutoGen>

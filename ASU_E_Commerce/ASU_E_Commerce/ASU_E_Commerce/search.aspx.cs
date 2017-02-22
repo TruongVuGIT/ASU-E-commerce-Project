@@ -143,12 +143,15 @@ namespace ASU_E_Commerce
             string user_id = myCookies["userid"];
             string result = "";
             int position = ListBox1.SelectedIndex;
-            int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);
-            int sold_ammount = Convert.ToInt32(quantity.ElementAt(position));
-            if (selected_ammount <= sold_ammount && selected_ammount>0)
+            if (position >= 0)
             {
-                result = myservice.add_cart(user_id, productid.ElementAt(position), Convert.ToString(selected_ammount), "", "");
-                MessageBox.Show(Page, result);
+                int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);
+                int sold_ammount = Convert.ToInt32(quantity.ElementAt(position));
+                if (selected_ammount <= sold_ammount && selected_ammount > 0)
+                {
+                    result = myservice.add_cart(user_id, productid.ElementAt(position), Convert.ToString(selected_ammount), "", "");
+                    MessageBox.Show(Page, result);
+                }
             }
         }
     }

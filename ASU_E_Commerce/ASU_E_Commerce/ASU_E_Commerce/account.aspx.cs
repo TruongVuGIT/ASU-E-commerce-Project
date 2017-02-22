@@ -12,6 +12,7 @@ namespace ASU_E_Commerce
     {
         Service1.Service1 myservice = new Service1.Service1();
         private static LinkedList<string> productid = new LinkedList<string>();
+        public static string edit_product = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             // if (Session["loginid"] == null)
@@ -109,13 +110,12 @@ namespace ASU_E_Commerce
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
 
-            string[] item = myservice.list_products(user_id, "", "");
-
-            string[] datas = myservice.book_details(item[position], "", "");
-            string productid = datas[0];
-
             if (position >= 0)
             {
+                string[] item = myservice.list_products(user_id, "", "");
+
+                string[] datas = myservice.book_details(item[position], "", "");
+                string productid = datas[0];
                 string[] data = myservice.book_details(productid, "", "");
                 Label4.Text = data[0];
                 Label5.Text = data[1];
@@ -132,7 +132,12 @@ namespace ASU_E_Commerce
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-
+            int position = ListBox1.SelectedIndex;
+            if (position >= 0)
+            {
+                edit_product = productid.ElementAt(position);
+                Response.Redirect("edit_books.aspx");
+            }
         }
 
         protected void Button5_Click(object sender, EventArgs e)
@@ -141,15 +146,11 @@ namespace ASU_E_Commerce
 
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
-
-            string[] item = myservice.list_products(user_id, "", "");
-
-            string[] datas = myservice.book_details(item[position], "", "");
-            string productid = datas[0];
-
+            
+            
             if (position >= 0)
             {
-                myservice.delete_book(productid, "", "");
+                myservice.delete_book(productid.ElementAt(position), "", "");
             }
             Response.Redirect("account.aspx");
         }
