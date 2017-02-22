@@ -29,7 +29,7 @@ namespace ASU_E_Commerce_Web_Services
                         if (innernode.FirstChild.Value == productid)
                         {
                             int value = Convert.ToInt32(innernode.Attributes["quantity"].Value);
-                            innernode.Attributes["quantity"].Value = Convert.ToString(value + 1);
+                            innernode.Attributes["quantity"].Value = Convert.ToString(value + Convert.ToInt32(quantity));
                             xml.Save(file_location);
                             productid_found = true;
                             result = productid + " has been added to your shopping cart.";

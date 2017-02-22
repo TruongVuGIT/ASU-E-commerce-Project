@@ -50,7 +50,7 @@ namespace ASU_E_Commerce
                 Session["userid"] = info[1];
 
                 HttpCookie myCookies = new HttpCookie("myCookieId");
-                myCookies["login"] = Session["loginid"].ToString();
+                myCookies["loginid"] = Session["loginid"].ToString();
                 myCookies["userid"] = Session["userid"].ToString();
                 myCookies.Expires = DateTime.Now.AddMonths(1);
                 Response.Cookies.Add(myCookies);

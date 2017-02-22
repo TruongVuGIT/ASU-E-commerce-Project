@@ -35,7 +35,7 @@
             <br />
             <br />
             <div>
-                <iframe class="search_frame" height="500" src="search.aspx" id="iframe1"></iframe>
+                <iframe class="search_frame" height="700" src="search.aspx" id="iframe1"></iframe>
             </div>
             <br />
             <br />

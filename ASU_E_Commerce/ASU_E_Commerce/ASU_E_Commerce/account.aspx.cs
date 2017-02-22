@@ -11,6 +11,7 @@ namespace ASU_E_Commerce
     public partial class account : System.Web.UI.Page
     {
         Service1.Service1 myservice = new Service1.Service1();
+        private static LinkedList<string> productid = new LinkedList<string>();
         protected void Page_Load(object sender, EventArgs e)
         {
             // if (Session["loginid"] == null)
@@ -78,6 +79,7 @@ namespace ASU_E_Commerce
         {
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
+            productid.Clear();
 
             string[] items = myservice.list_products(user_id, "", "");
 
@@ -85,6 +87,7 @@ namespace ASU_E_Commerce
             {
                 string[] data = myservice.book_details(items[x], "", "");
                 string product_id = data[0];
+                productid.AddLast(data[0]);
                 string isbn = data[1];
                 string title = data[2];
                 string subject = data[3];

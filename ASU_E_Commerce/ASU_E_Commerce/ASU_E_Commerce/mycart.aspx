@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
     <title></title>
 </head>
-<body>
+<body class="main_body">
     <form id="form1" runat="server">
         <div class="top_border">
             <div>
@@ -33,20 +33,19 @@
 
         <asp:ListBox ID="ListBox1" runat="server" Width="1054px" Font-Size="18" Height="111px"></asp:ListBox>
         <asp:Label ID="Label1" runat="server" Text="Quantity:"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="DropDownList6" runat="server" Font-Size="18">
-                    <asp:ListItem Selected="True">0</asp:ListItem>
-                    <asp:ListItem>1</asp:ListItem>
-                    <asp:ListItem>2</asp:ListItem>
-                    <asp:ListItem>3</asp:ListItem>
-                    <asp:ListItem>4</asp:ListItem>
-                    <asp:ListItem>5</asp:ListItem>
-                    <asp:ListItem>6</asp:ListItem>
-                    <asp:ListItem>7</asp:ListItem>
-                    <asp:ListItem>8</asp:ListItem>
-                    <asp:ListItem>9</asp:ListItem>
-                    <asp:ListItem>10</asp:ListItem>
-                </asp:DropDownList>
+        <asp:DropDownList ID="DropDownList6" runat="server" Font-Size="18">
+            <asp:ListItem Selected="True">0</asp:ListItem>
+            <asp:ListItem>1</asp:ListItem>
+            <asp:ListItem>2</asp:ListItem>
+            <asp:ListItem>3</asp:ListItem>
+            <asp:ListItem>4</asp:ListItem>
+            <asp:ListItem>5</asp:ListItem>
+            <asp:ListItem>6</asp:ListItem>
+            <asp:ListItem>7</asp:ListItem>
+            <asp:ListItem>8</asp:ListItem>
+            <asp:ListItem>9</asp:ListItem>
+            <asp:ListItem>10</asp:ListItem>
+        </asp:DropDownList>
         <asp:Button ID="Button4" runat="server" CssClass="button" OnClick="Button4_Click" Text="Remove" />
         <asp:Button ID="Button1" CssClass="button" runat="server" Text="Checkout" OnClick="Button1_Click" />
         <br />
@@ -54,7 +53,7 @@
         <br />
 
         <div>
-            <table id="details" style="font-size:28px">
+            <table id="details" style="font-size: 28px">
                 <tr>
                     <td>Product ID
                     </td>

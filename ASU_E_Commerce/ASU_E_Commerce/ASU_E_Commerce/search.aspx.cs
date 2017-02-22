@@ -12,6 +12,8 @@ namespace ASU_E_Commerce
     public partial class search : System.Web.UI.Page
     {
         Service1.Service1 myservice = new Service1.Service1();
+        private static LinkedList<string> productid = new LinkedList<string>();
+        private static LinkedList<int> quantity = new LinkedList<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie myCookies = Request.Cookies["myCookieId"];
@@ -80,27 +82,31 @@ namespace ASU_E_Commerce
                 DropDownList5.Visible = false;
             }
         }
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (DropDownList1.SelectedValue == "Books")
             {
+                productid.Clear();
+                quantity.Clear();
                 ListBox1.Items.Clear();
                 string[] items = myservice.search_books(DropDownList2.SelectedValue, TextBox1.Text, "", "");
                 for (int x = 0; x < items.Length; x++)
                 {
                     string[] data = myservice.book_details(items[x], "", "");
                     string product_id = data[0];
+                    productid.AddLast(data[0]);
                     string isbn = data[1];
                     string title = data[2];
                     string subject = data[3];
-                    string quantity = data[4];
+                    string qty = data[4];
+                    quantity.AddLast(Convert.ToInt32(data[4]));
                     string price = data[5];
                     string bidding = data[6];
                     string[] info = myservice.get_user_info(data[7], "", "");
                     string seller_name = info[2];
                     string seller_email = info[3];
-                    string result ="Product ID: "+ product_id + " Quantity: " + quantity + " Price: " + price + " Bidding: " + bidding;
+                    string result = "Product ID: " + product_id + " Quantity: " + qty + " Price: " + price + " Bidding: " + bidding;
                     ListBox1.Items.Add(result);
                 }
             }
@@ -135,15 +141,14 @@ namespace ASU_E_Commerce
         {
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
-
-            if (Label8.Text != "" && user_id!= null)
+            string result = "";
+            int position = ListBox1.SelectedIndex;
+            int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);
+            int sold_ammount = Convert.ToInt32(quantity.ElementAt(position));
+            if (selected_ammount <= sold_ammount && selected_ammount>0)
             {
-                int selected_ammount = Convert.ToInt32(DropDownList6.SelectedItem.Text);
-                int sold_ammount = Convert.ToInt32(Label8.Text);
-                if (selected_ammount <= sold_ammount)
-                {
-                    myservice.add_cart(user_id, Label4.Text, Convert.ToString(selected_ammount), "", "");
-                }
+                result = myservice.add_cart(user_id, productid.ElementAt(position), Convert.ToString(selected_ammount), "", "");
+                MessageBox.Show(Page, result);
             }
         }
     }

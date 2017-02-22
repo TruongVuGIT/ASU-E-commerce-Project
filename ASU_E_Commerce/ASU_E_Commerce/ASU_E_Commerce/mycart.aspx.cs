@@ -11,6 +11,8 @@ namespace ASU_E_Commerce
     public partial class mycart : System.Web.UI.Page
     {
         Service1.Service1 myservice = new Service1.Service1();
+        private static LinkedList<string> productid = new LinkedList<string>();
+        private static LinkedList<int> quantity = new LinkedList<int>();
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie myCookies = Request.Cookies["myCookieId"];
@@ -34,11 +36,13 @@ namespace ASU_E_Commerce
             string user_id = myCookies["userid"];
 
             string[] products = myservice.product_list(user_id, "", "");
-            string[] quantity = myservice.quantity(user_id, "", "");
+            string[] qty = myservice.quantity(user_id, "", "");
 
             for (int x = 0; x < products.Length; x++)
             {
-                string display = "Products: " + products[x] + " Quantity: " + quantity[x];
+                productid.AddLast(products[x]);
+                quantity.AddLast(Convert.ToInt32(qty[x]));
+                string display = "Products: " + products[x] + " Quantity: " + qty[x];
                 ListBox1.Items.Add(display);
             }
         }
