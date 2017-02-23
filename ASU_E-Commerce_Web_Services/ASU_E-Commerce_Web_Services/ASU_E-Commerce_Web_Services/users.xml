@@ -1,3 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <users>
+  <user>
+    <fname>Public</fname>
+    <lname>Public</lname>
+    <pname>Public</pname>
+    <email>Public</email>
+    <loginid>public</loginid>
+    <password>epHF+uzTuVAYp4d8A4cZn/XE3FznvlgswjGzFRk3fsNSNksIm1GN8eoy7Is0FaCjnvATzm9RUaOznbUw9mrVdA==</password>
+    <streetaddress1>Public</streetaddress1>
+    <streetaddress2/>
+    <city>Public</city>
+    <state>Public</state>
+    <zipcode>Public</zipcode>
+    <userid>1</userid>
+  </user>
 </users>

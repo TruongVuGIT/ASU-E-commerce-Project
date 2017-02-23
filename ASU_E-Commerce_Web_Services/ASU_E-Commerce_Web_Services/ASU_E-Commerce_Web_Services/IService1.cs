@@ -75,5 +75,7 @@ namespace ASU_E_Commerce_Web_Services
         [OperationContract]
         string[,] listCartProducts(string userid, string host_email, string host_credential);
         */
+        [OperationContract]
+        string remove_cart(string userid, string productid, string quantity, string host_email, string host_credentials);
     }
 }

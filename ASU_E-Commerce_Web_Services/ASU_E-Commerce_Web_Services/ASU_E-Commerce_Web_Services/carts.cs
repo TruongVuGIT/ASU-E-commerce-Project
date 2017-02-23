@@ -409,5 +409,56 @@ namespace ASU_E_Commerce_Web_Services
             }
             return list;
         }
+
+        public string remove_cart(string userid, string productid, string quantity)
+        {
+            string result = "";
+
+            string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/carts.xml";
+
+            XmlDocument xml = new XmlDocument();
+            xml.Load(file_location);
+
+            foreach (XmlNode node in xml.SelectNodes("//cart"))
+            {
+                string user = node.Attributes["userid"].Value;
+                if (user == userid)
+                {
+                    foreach (XmlNode innernode in node.ChildNodes)
+                    {
+                        if (innernode.FirstChild.Value == productid)
+                        {
+                            int value = Convert.ToInt32(innernode.Attributes["quantity"].Value);
+                            int current = Convert.ToInt32(innernode.Attributes["quantity"].Value);
+                            int final = current - Convert.ToInt32(quantity);
+                            if (final > 0)
+                            {
+                                innernode.Attributes["quantity"].Value = Convert.ToString(value - Convert.ToInt32(quantity));
+                                xml.Save(file_location);
+                                result = productid + " has been removed from your shopping cart.";
+                                break;
+                            }
+                            else
+                            {
+                                innernode.Attributes["quantity"].Value = "0";
+                                xml.Save(file_location);
+                                result = productid + " has been removed from your shopping cart.";
+                                break;
+                            }
+                        }
+                    }
+
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(file_location);
+                    XmlNodeList nodes = doc.SelectNodes("//productid[@quantity='0']");
+                    for (int i = nodes.Count - 1; i >= 0; i--)
+                    {
+                        nodes[i].ParentNode.RemoveChild(nodes[i]);
+                    }
+                    doc.Save(file_location);
+                }
+            }
+            return result;
+        }
     }
 }

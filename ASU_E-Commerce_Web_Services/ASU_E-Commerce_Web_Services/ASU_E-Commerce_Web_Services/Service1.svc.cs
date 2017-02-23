@@ -167,5 +167,9 @@ namespace ASU_E_Commerce_Web_Services
             return mycarts.listCartProducts(userid);
         }
         */
+        public string remove_cart(string userid, string productid, string quantity, string host_email, string host_credentials)
+        {
+            return mycarts.remove_cart(userid, productid, quantity);
+        }
     }
 }
