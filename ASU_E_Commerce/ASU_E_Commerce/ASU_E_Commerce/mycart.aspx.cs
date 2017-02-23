@@ -13,6 +13,7 @@ namespace ASU_E_Commerce
         Service1.Service1 myservice = new Service1.Service1();
         private static LinkedList<string> productid = new LinkedList<string>();
         private static LinkedList<int> quantity = new LinkedList<int>();
+        private static LinkedList<double> price = new LinkedList<double>();
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie myCookies = Request.Cookies["myCookieId"];
@@ -28,10 +29,14 @@ namespace ASU_E_Commerce
             {
                 load_products();
             }
+            
         }
 
         private void load_products()
         {
+            productid.Clear();
+            quantity.Clear();
+            price.Clear();
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string user_id = myCookies["userid"];
 
@@ -45,10 +50,25 @@ namespace ASU_E_Commerce
                 string display = "Products: " + products[x] + " Quantity: " + qty[x];
                 ListBox1.Items.Add(display);
             }
+
+            for (int x = 0; x < productid.Count; x++)
+            {
+                string[] data = myservice.book_details(productid.ElementAt(x), "", "");
+                price.AddLast(Convert.ToDouble(data[5]));
+            }
+
+            double total_price = 0;
+            for (int x = 0; x < productid.Count; x++)
+            {
+                total_price += (quantity.ElementAt(x) * price.ElementAt(x));
+            }
+
+            Label3.Text = Convert.ToString(total_price);
         }
 
         protected void Button1_Click(object sender, EventArgs e)// checkout button
         {
+            Session["total"] = Label3.Text;
             Response.Redirect("checkout.aspx");
         }
 

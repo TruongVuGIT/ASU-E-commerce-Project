@@ -38,7 +38,10 @@ namespace ASU_E_Commerce
 
 
             //Total Book Amount:
-            TextBox1.Text = "100.64";
+            if (Session["total"].ToString() != "")
+            {
+                Label1.Text = Session["total"].ToString();
+            }
         }
 
         protected void BackButton_Click(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace ASU_E_Commerce
         {
             string business = "cseecommerce@gmail.com";
             string itemName = "Java 101";
-            double itemAmount = Convert.ToDouble(TextBox1.Text);
+            double itemAmount = Convert.ToDouble(Label1.Text);
             string currencyCode = "USD";
 
             StringBuilder ppHref = new StringBuilder();

@@ -17,37 +17,46 @@
                         <h1>
                             <img src="Content/sparky.png" width="150" height="150" style="float: left" />&nbsp ASU E-COMMERCE 
                             <img src="Content/Innovation.png" width="175" height="175" style="float: right" /></h1>
-                        <h2>&nbsp Checkout</h2>
+                        <h2>&nbsp Shopping Cart</h2>
                         <br />
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-
-            <h1>
-                <asp:Label ID="Label13" runat="server" Text="My Shopping Cart"></asp:Label>
-            </h1>
-
-        </div>
-
-        <asp:ListBox ID="ListBox1" runat="server" Width="1054px" Font-Size="18" Height="111px"></asp:ListBox>
-        <asp:Label ID="Label1" runat="server" Text="Quantity:"></asp:Label>
-        <asp:DropDownList ID="DropDownList6" runat="server" Font-Size="18">
-            <asp:ListItem Selected="True">0</asp:ListItem>
-            <asp:ListItem>1</asp:ListItem>
-            <asp:ListItem>2</asp:ListItem>
-            <asp:ListItem>3</asp:ListItem>
-            <asp:ListItem>4</asp:ListItem>
-            <asp:ListItem>5</asp:ListItem>
-            <asp:ListItem>6</asp:ListItem>
-            <asp:ListItem>7</asp:ListItem>
-            <asp:ListItem>8</asp:ListItem>
-            <asp:ListItem>9</asp:ListItem>
-            <asp:ListItem>10</asp:ListItem>
-        </asp:DropDownList>
-        <asp:Button ID="Button4" runat="server" CssClass="button" OnClick="Button4_Click" Text="Remove" />
-        <asp:Button ID="Button1" CssClass="button" runat="server" Text="Checkout" OnClick="Button1_Click" />
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    <asp:ListBox ID="ListBox1" runat="server" Width="1054px" Font-Size="18" Height="111px"></asp:ListBox>
+                </td>
+                <td>
+                    <asp:Label ID="Label1" runat="server" Text="Quantity:"></asp:Label>
+                    <asp:DropDownList ID="DropDownList6" runat="server" Font-Size="18">
+                        <asp:ListItem Selected="True">0</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>5</asp:ListItem>
+                        <asp:ListItem>6</asp:ListItem>
+                        <asp:ListItem>7</asp:ListItem>
+                        <asp:ListItem>8</asp:ListItem>
+                        <asp:ListItem>9</asp:ListItem>
+                        <asp:ListItem>10</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:Button ID="Button4" runat="server" CssClass="button" OnClick="Button4_Click" Text="Remove" />
+                    <asp:Button ID="Button1" CssClass="button" runat="server" Text="Checkout" OnClick="Button1_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="Label2" runat="server" Text="Total:"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+                </td>
+                <td></td>
+            </tr>
+        </table>
         <br />
         <asp:Button ID="Button5" runat="server" CssClass="button" OnClick="Button5_Click" Text="View Details" />
         <br />
