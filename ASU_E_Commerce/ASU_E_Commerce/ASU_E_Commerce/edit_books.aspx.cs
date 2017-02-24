@@ -13,6 +13,13 @@ namespace ASU_E_Commerce
         Service1.Service1 service = new Service1.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            if ((myCookies == null) || (myCookies["userid"] == ""))
+            {
+                Response.Redirect("default1.aspx");
+            }
+
             // Label2.Text = account.edit_product;
             product_id = account.edit_product;//set product_id
 
@@ -43,25 +50,32 @@ namespace ASU_E_Commerce
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (product_id != "")
+            //if (product_id != "")
+            //{
+
+            //submit changes
+            //(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding)
+            //string response = service.edit_books(product_id, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox8.Text, TextBox6.Text, TextBox7.Text, "", "");
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string login_id = myCookies["loginid"];
+            string user_id = myCookies["userid"];
+            if (IsPostBack)
             {
-
-                //submit changes
-                //(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding)
-                string response = service.edit_books(product_id, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox8.Text, TextBox6.Text, TextBox7.Text, "", "");
-
-                if (response == "Pass")
-                {
-                    Label5.Visible = false;
-                    account.edit_product = "";
-                    Response.Redirect("account.aspx");
-                }
-                else
-                {
-                    Label5.Visible = true;
-                    Label5.Text = response;
-                }
+                string response = service.edit_books(user_id, Label2.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox8.Text, TextBox6.Text, TextBox7.Text, "", "");
             }
+            // MessageBox.Show(Page, response);
+            //if (response == "Pass")
+            //{
+            //    Label5.Visible = false;
+            //    account.edit_product = "";
+            //    Response.Redirect("account.aspx");
+            //}
+            //else
+            //{
+            //    Label5.Visible = true;
+            //    Label5.Text = response;
+            //}
+            // }
         }
 
         protected void Button2_Click(object sender, EventArgs e)

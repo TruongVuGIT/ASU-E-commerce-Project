@@ -34,7 +34,7 @@ namespace ASU_E_Commerce
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("default.aspx");
+            Response.Redirect("default1.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)

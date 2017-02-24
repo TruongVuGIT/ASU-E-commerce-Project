@@ -49,6 +49,7 @@ namespace ASU_E_Commerce_Web_Services
             return result;
         }
 
+        /*
         public string edit_books(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding)
         {
             string result = "Fail";
@@ -81,7 +82,7 @@ namespace ASU_E_Commerce_Web_Services
 
             return result;
         }
-
+        */
         public string[] book_details(string productid)
         {
             string[] details = new string[8];
@@ -194,6 +195,35 @@ namespace ASU_E_Commerce_Web_Services
         }
 
         // private functions
+
+        public string edit_books(string userid, string product_id, string isbn, string title, string subject, string quantity, string price, string bidding)
+        {
+            //getdetails and store in array
+
+            //delete_book(product_id);
+
+
+            //call delete
+            //make new add
+            string result = "Fail";
+
+            string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/books.xml";
+            XElement xml = XElement.Load(file_location);
+            xml.Add(new XElement("book",
+                new XElement("productid", product_id),
+                new XElement("isbn", isbn),
+                new XElement("title", title),
+                new XElement("subject", subject),
+                new XElement("quantity", quantity),
+                new XElement("price", price),
+                new XElement("bidding", bidding),
+                new XElement("userid", userid)));
+            xml.Save(file_location);
+
+            result = "Pass";
+            return result;
+
+        }
 
         private string get_userid(string loginid)
         {

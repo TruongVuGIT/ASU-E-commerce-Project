@@ -48,10 +48,18 @@ namespace ASU_E_Commerce_Web_Services
             return mybooks.add_books(login_id, isbn, title, subject, quantity, price, bidding);
         }
 
+        /*
         public string edit_books(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential)
         {
             return mybooks.edit_books(product_id, isbn, title, subject, quantity, price, bidding);
         }
+        */
+
+        public string edit_books(string userid, string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential)
+        {
+            return mybooks.edit_books(userid, product_id, isbn, title, subject, quantity, price, bidding);
+        }
+
 
         //done
         public LinkedList<string> search_books(string type, string input, string host_email, string host_credential)

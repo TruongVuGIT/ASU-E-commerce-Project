@@ -27,8 +27,14 @@ namespace ASU_E_Commerce_Web_Services
         [OperationContract]
         string add_books(string login_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential);
 
+        /*
         [OperationContract]
         string edit_books(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential);
+        */
+
+        [OperationContract]
+        string edit_books(string userid, string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential);
+
 
         [OperationContract]
         string delete_book(string productid, string host_email, string host_credential);
