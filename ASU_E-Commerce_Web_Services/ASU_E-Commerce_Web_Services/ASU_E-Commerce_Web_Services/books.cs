@@ -16,26 +16,35 @@ namespace ASU_E_Commerce_Web_Services
         {
             string result = "Fail";
             string userid = get_userid(login_id);
+            string check = checkBook(isbn, title, subject, quantity, price, bidding);
+
             if (userid != "")
             {
-                string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/books.xml";
-                XElement xml = XElement.Load(file_location);
-                xml.Add(new XElement("book",
-                    new XElement("productid", generate_product_id()),
-                    new XElement("isbn", isbn),
-                    new XElement("title", title),
-                    new XElement("subject", subject),
-                    new XElement("quantity", quantity),
-                    new XElement("price", price),
-                    new XElement("bidding", bidding),
-                    new XElement("userid", userid)));
-                xml.Save(file_location);
+                if (check == "Pass")
+                {
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////
+                    string file_location = AppDomain.CurrentDomain.BaseDirectory + @"/books.xml";
+                    XElement xml = XElement.Load(file_location);
+                    xml.Add(new XElement("book",
+                        new XElement("productid", generate_product_id()),
+                        new XElement("isbn", isbn),
+                        new XElement("title", title),
+                        new XElement("subject", subject),
+                        new XElement("quantity", quantity),
+                        new XElement("price", price),
+                        new XElement("bidding", bidding),
+                        new XElement("userid", userid)));
+                    xml.Save(file_location);
 
-                result = "Pass";
+                    result = "Pass";
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////
+                }
+
+
             }
             else
             {
-                result = "Fail";
+                result = check;
             }
             return result;
         }
@@ -247,6 +256,37 @@ namespace ASU_E_Commerce_Web_Services
 
             return add;
         }
-       
+
+        private string checkBook(string isbn, string title, string subject, string quantity, string price, string bidding)
+        {
+            string result = "Pass";
+            double outval = 0;
+            double outval2 = 0;
+
+            if (isbn == "" && title == "" && subject == "" && quantity == "" && price == "" && bidding == "")// check if null first
+            {
+                result = "One or more fields empty!";
+            }
+            else// if not null, then check price and bidding values
+            {
+                if (double.TryParse(price, out outval) && double.TryParse(bidding, out outval2))//check if price and bidding are double values
+                {
+                    if (outval > 9999.99 && outval2 > 9999.99)//check if price and bidding values are not excessively high
+                    {
+                        result = "price and/or bidding value(s) too great!";
+                    }
+                    else
+                    {
+                        result = "Pass";
+                    }
+                }
+                else
+                {
+                    result = "Please enter a valid price and/or bidding value(s)!";
+                }
+            }
+            return result;
+        }
+
     }
 }
