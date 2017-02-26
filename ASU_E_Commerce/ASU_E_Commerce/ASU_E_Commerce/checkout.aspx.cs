@@ -11,6 +11,9 @@ namespace ASU_E_Commerce
     public partial class checkout : System.Web.UI.Page
     {
         Service1.Service1 myservice = new Service1.Service1();
+        private static LinkedList<string> productid = new LinkedList<string>();
+        private static LinkedList<int> quantity = new LinkedList<int>();
+        private static LinkedList<double> price = new LinkedList<double>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -42,6 +45,11 @@ namespace ASU_E_Commerce
             {
                 Label1.Text = Session["total"].ToString();
             }
+
+            if (!IsPostBack)
+            {
+                load_products();
+            }
         }
 
         protected void BackButton_Click(object sender, EventArgs e)
@@ -65,6 +73,37 @@ namespace ASU_E_Commerce
             ppHref.Append("&currency_code=" + currencyCode);
 
             Response.Redirect(ppHref.ToString(), true);
+        }
+
+        private void load_products()
+        {
+            productid.Clear();
+            quantity.Clear();
+            price.Clear();
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+
+            string[] products = myservice.product_list(user_id, "", "");
+            string[] qty = myservice.quantity(user_id, "", "");
+            
+
+            for (int x = 0; x < products.Length; x++)
+            {
+                productid.AddLast(products[x]);
+                quantity.AddLast(Convert.ToInt32(qty[x]));
+              
+            }
+
+            for (int x = 0; x < productid.Count; x++)
+            {
+                string[] data = myservice.book_details(productid.ElementAt(x), "", "");
+                price.AddLast(Convert.ToDouble(data[5]));
+            }
+
+            for (int x = 0; x < productid.Count; x++)
+            {
+                TextBox1.Text += "Products: " + productid.ElementAt(x) + " Quantity: " + quantity.ElementAt(x) + " Price: " + price.ElementAt(x);
+            }
         }
     }
 }

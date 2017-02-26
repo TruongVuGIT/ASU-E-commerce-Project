@@ -47,7 +47,7 @@ namespace ASU_E_Commerce
             }
             else
             {
-                MessageBox.Show(Page, "There is an error upon uploading book!");
+                MessageBox.Show(Page,result);
             }
         }
     }

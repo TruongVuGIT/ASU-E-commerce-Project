@@ -130,6 +130,7 @@ namespace ASU_E_Commerce
             }
         }
 
+        /*
         protected void Button4_Click(object sender, EventArgs e)
         {
             int position = ListBox1.SelectedIndex;
@@ -139,6 +140,7 @@ namespace ASU_E_Commerce
                 Response.Redirect("edit_books.aspx");
             }
         }
+        */
 
         protected void Button5_Click(object sender, EventArgs e)
         {

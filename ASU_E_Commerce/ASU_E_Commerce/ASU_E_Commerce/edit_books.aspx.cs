@@ -59,10 +59,12 @@ namespace ASU_E_Commerce
             HttpCookie myCookies = Request.Cookies["myCookieId"];
             string login_id = myCookies["loginid"];
             string user_id = myCookies["userid"];
+            /*
             if (IsPostBack)
             {
-                string response = service.edit_books(user_id, Label2.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox8.Text, TextBox6.Text, TextBox7.Text, "", "");
+                string response = service.edit_books(Label2.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox8.Text, TextBox6.Text, TextBox7.Text, "","");
             }
+            */
             // MessageBox.Show(Page, response);
             //if (response == "Pass")
             //{

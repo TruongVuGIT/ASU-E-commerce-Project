@@ -79,7 +79,10 @@ namespace ASU_E_Commerce
 
         protected void Button4_Click(object sender, EventArgs e)// remove button
         {
-
+            HttpCookie myCookies = Request.Cookies["myCookieId"];
+            string user_id = myCookies["userid"];
+            myservice.remove_cart(user_id,productid.ElementAt(ListBox1.SelectedIndex), DropDownList6.SelectedValue, "", "");
+            Response.Redirect("mycart.aspx");
         }
 
         protected void Button5_Click(object sender, EventArgs e)// view details button

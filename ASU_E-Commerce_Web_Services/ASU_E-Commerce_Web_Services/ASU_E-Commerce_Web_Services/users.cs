@@ -201,8 +201,9 @@ namespace ASU_E_Commerce_Web_Services
             foreach (XmlNode book_node in book_xml.SelectNodes("//book"))
             {
                 string found_id = book_node.SelectSingleNode("userid").InnerText;
+                string quantity = book_node.SelectSingleNode("quantity").InnerText;
 
-                if (user_id == found_id)
+                if (user_id == found_id && quantity != "0")
                 {
                     product_list.AddLast(book_node.SelectSingleNode("productid").InnerText);
                 }

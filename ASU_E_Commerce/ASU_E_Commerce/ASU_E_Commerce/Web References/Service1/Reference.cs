@@ -39,8 +39,6 @@ namespace ASU_E_Commerce.Service1 {
         
         private System.Threading.SendOrPostCallback add_booksOperationCompleted;
         
-        private System.Threading.SendOrPostCallback edit_booksOperationCompleted;
-        
         private System.Threading.SendOrPostCallback delete_bookOperationCompleted;
         
         private System.Threading.SendOrPostCallback book_detailsOperationCompleted;
@@ -68,6 +66,8 @@ namespace ASU_E_Commerce.Service1 {
         private System.Threading.SendOrPostCallback product_listOperationCompleted;
         
         private System.Threading.SendOrPostCallback quantityOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback remove_cartOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -123,9 +123,6 @@ namespace ASU_E_Commerce.Service1 {
         public event add_booksCompletedEventHandler add_booksCompleted;
         
         /// <remarks/>
-        public event edit_booksCompletedEventHandler edit_booksCompleted;
-        
-        /// <remarks/>
         public event delete_bookCompletedEventHandler delete_bookCompleted;
         
         /// <remarks/>
@@ -166,6 +163,9 @@ namespace ASU_E_Commerce.Service1 {
         
         /// <remarks/>
         public event quantityCompletedEventHandler quantityCompleted;
+        
+        /// <remarks/>
+        public event remove_cartCompletedEventHandler remove_cartCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sign_up", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -390,52 +390,6 @@ namespace ASU_E_Commerce.Service1 {
             if ((this.add_booksCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.add_booksCompleted(this, new add_booksCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/edit_books", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string edit_books([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string product_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string isbn, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string subject, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string quantity, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string price, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string bidding, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credential) {
-            object[] results = this.Invoke("edit_books", new object[] {
-                        product_id,
-                        isbn,
-                        title,
-                        subject,
-                        quantity,
-                        price,
-                        bidding,
-                        host_email,
-                        host_credential});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void edit_booksAsync(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential) {
-            this.edit_booksAsync(product_id, isbn, title, subject, quantity, price, bidding, host_email, host_credential, null);
-        }
-        
-        /// <remarks/>
-        public void edit_booksAsync(string product_id, string isbn, string title, string subject, string quantity, string price, string bidding, string host_email, string host_credential, object userState) {
-            if ((this.edit_booksOperationCompleted == null)) {
-                this.edit_booksOperationCompleted = new System.Threading.SendOrPostCallback(this.Onedit_booksOperationCompleted);
-            }
-            this.InvokeAsync("edit_books", new object[] {
-                        product_id,
-                        isbn,
-                        title,
-                        subject,
-                        quantity,
-                        price,
-                        bidding,
-                        host_email,
-                        host_credential}, this.edit_booksOperationCompleted, userState);
-        }
-        
-        private void Onedit_booksOperationCompleted(object arg) {
-            if ((this.edit_booksCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.edit_booksCompleted(this, new edit_booksCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -972,6 +926,44 @@ namespace ASU_E_Commerce.Service1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/remove_cart", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string remove_cart([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string userid, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string productid, [System.Xml.Serialization.XmlElementAttribute("quantity", IsNullable=true)] string quantity1, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string host_credentials) {
+            object[] results = this.Invoke("remove_cart", new object[] {
+                        userid,
+                        productid,
+                        quantity1,
+                        host_email,
+                        host_credentials});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void remove_cartAsync(string userid, string productid, string quantity1, string host_email, string host_credentials) {
+            this.remove_cartAsync(userid, productid, quantity1, host_email, host_credentials, null);
+        }
+        
+        /// <remarks/>
+        public void remove_cartAsync(string userid, string productid, string quantity1, string host_email, string host_credentials, object userState) {
+            if ((this.remove_cartOperationCompleted == null)) {
+                this.remove_cartOperationCompleted = new System.Threading.SendOrPostCallback(this.Onremove_cartOperationCompleted);
+            }
+            this.InvokeAsync("remove_cart", new object[] {
+                        userid,
+                        productid,
+                        quantity1,
+                        host_email,
+                        host_credentials}, this.remove_cartOperationCompleted, userState);
+        }
+        
+        private void Onremove_cartOperationCompleted(object arg) {
+            if ((this.remove_cartCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.remove_cartCompleted(this, new remove_cartCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1107,32 +1099,6 @@ namespace ASU_E_Commerce.Service1 {
         private object[] results;
         
         internal add_booksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    public delegate void edit_booksCompletedEventHandler(object sender, edit_booksCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class edit_booksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal edit_booksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1514,6 +1480,32 @@ namespace ASU_E_Commerce.Service1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void remove_cartCompletedEventHandler(object sender, remove_cartCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class remove_cartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal remove_cartCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

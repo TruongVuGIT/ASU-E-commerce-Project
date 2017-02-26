@@ -10,61 +10,61 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:09</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:09</publishTime>
     </File>
     <File Include="bin/ASU_E-Commerce_Web_Services.dll">
-      <publishTime>02/22/2017 13:20:16</publishTime>
+      <publishTime>02/26/2017 12:59:21</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:11</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:11</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>02/22/2017 11:17:58</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="books.xml">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:09</publishTime>
     </File>
     <File Include="carts.xml">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:49:21</publishTime>
     </File>
     <File Include="data.xml">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:38:06</publishTime>
     </File>
     <File Include="orders.xml">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="Service1.svc">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="shirts.xml">
-      <publishTime>02/22/2017 11:17:57</publishTime>
+      <publishTime>02/26/2017 12:11:10</publishTime>
     </File>
     <File Include="users.xml">
-      <publishTime>02/22/2017 11:36:55</publishTime>
+      <publishTime>02/26/2017 12:49:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/22/2017 11:37:09</publishTime>
+      <publishTime>02/26/2017 12:33:27</publishTime>
     </File>
   </ItemGroup>
 </Project>

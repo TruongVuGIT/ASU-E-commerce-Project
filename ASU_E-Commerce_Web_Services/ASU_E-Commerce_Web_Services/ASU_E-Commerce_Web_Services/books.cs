@@ -39,12 +39,10 @@ namespace ASU_E_Commerce_Web_Services
                     result = "Pass";
                     /////////////////////////////////////////////////////////////////////////////////////////////////////
                 }
-
-
-            }
-            else
-            {
-                result = check;
+                else
+                {
+                    result = check;
+                }
             }
             return result;
         }
@@ -180,8 +178,11 @@ namespace ASU_E_Commerce_Web_Services
                 string foundproductid = node.SelectSingleNode("productid").InnerText;
                 if (productid == foundproductid)
                 {
+                    /*
                     node.ParentNode.RemoveChild(node);
                     xml.Save(file_location);
+                    */
+                    node.SelectSingleNode("quantity").InnerText = "0";
                     result = "Pass";
                     break;
                 }
@@ -196,6 +197,7 @@ namespace ASU_E_Commerce_Web_Services
 
         // private functions
 
+            /*
         public string edit_books(string userid, string product_id, string isbn, string title, string subject, string quantity, string price, string bidding)
         {
             //getdetails and store in array
@@ -224,6 +226,7 @@ namespace ASU_E_Commerce_Web_Services
             return result;
 
         }
+        */
 
         private string get_userid(string loginid)
         {
@@ -246,9 +249,7 @@ namespace ASU_E_Commerce_Web_Services
                 }
             }
             return result;
-        }
-
-      
+        }      
         private string generate_product_id()
         {
             string productid = "";
@@ -286,22 +287,21 @@ namespace ASU_E_Commerce_Web_Services
 
             return add;
         }
-
         private string checkBook(string isbn, string title, string subject, string quantity, string price, string bidding)
         {
             string result = "Pass";
             double outval = 0;
             double outval2 = 0;
 
-            if (isbn == "" && title == "" && subject == "" && quantity == "" && price == "" && bidding == "")// check if null first
+            if (isbn == "" || title == "" || subject == "" || quantity == "" || price == "" || bidding == "")// check if null first
             {
                 result = "One or more fields empty!";
             }
             else// if not null, then check price and bidding values
             {
-                if (double.TryParse(price, out outval) && double.TryParse(bidding, out outval2))//check if price and bidding are double values
+                if (double.TryParse(price, out outval) || double.TryParse(bidding, out outval2))//check if price and bidding are double values
                 {
-                    if (outval > 9999.99 && outval2 > 9999.99)//check if price and bidding values are not excessively high
+                    if (outval > 9999.99 || outval2 > 9999.99)//check if price and bidding values are not excessively high
                     {
                         result = "price and/or bidding value(s) too great!";
                     }

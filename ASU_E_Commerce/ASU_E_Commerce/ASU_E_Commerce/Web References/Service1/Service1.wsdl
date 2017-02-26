@@ -37,12 +37,6 @@
   <wsdl:message name="IService1_add_books_OutputMessage">
     <wsdl:part name="parameters" element="tns:add_booksResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_edit_books_InputMessage">
-    <wsdl:part name="parameters" element="tns:edit_books" />
-  </wsdl:message>
-  <wsdl:message name="IService1_edit_books_OutputMessage">
-    <wsdl:part name="parameters" element="tns:edit_booksResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_delete_book_InputMessage">
     <wsdl:part name="parameters" element="tns:delete_book" />
   </wsdl:message>
@@ -127,6 +121,12 @@
   <wsdl:message name="IService1_quantity_OutputMessage">
     <wsdl:part name="parameters" element="tns:quantityResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_remove_cart_InputMessage">
+    <wsdl:part name="parameters" element="tns:remove_cart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_remove_cart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:remove_cartResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="sign_up">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sign_up" message="tns:IService1_sign_up_InputMessage" />
@@ -147,10 +147,6 @@
     <wsdl:operation name="add_books">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/add_books" message="tns:IService1_add_books_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/add_booksResponse" message="tns:IService1_add_books_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="edit_books">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/edit_books" message="tns:IService1_edit_books_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/edit_booksResponse" message="tns:IService1_edit_books_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="delete_book">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/delete_book" message="tns:IService1_delete_book_InputMessage" />
@@ -208,6 +204,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/quantity" message="tns:IService1_quantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/quantityResponse" message="tns:IService1_quantity_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="remove_cart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/remove_cart" message="tns:IService1_remove_cart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/remove_cartResponse" message="tns:IService1_remove_cart_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -249,15 +249,6 @@
     </wsdl:operation>
     <wsdl:operation name="add_books">
       <soap:operation soapAction="http://tempuri.org/IService1/add_books" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="edit_books">
-      <soap:operation soapAction="http://tempuri.org/IService1/edit_books" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -384,6 +375,15 @@
     </wsdl:operation>
     <wsdl:operation name="quantity">
       <soap:operation soapAction="http://tempuri.org/IService1/quantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove_cart">
+      <soap:operation soapAction="http://tempuri.org/IService1/remove_cart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

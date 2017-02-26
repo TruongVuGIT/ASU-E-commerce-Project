@@ -137,8 +137,6 @@
                                 <br />
                                 <asp:Button ID="Button3" CssClass="button" runat="server" Text="View Details" OnClick="Button3_Click" />
                                 &nbsp&nbsp&nbsp&nbsp
-                                <asp:Button ID="Button4" CssClass="button" runat="server" Text="Edit" OnClick="Button4_Click" />
-                                &nbsp&nbsp&nbsp&nbsp
                                 <asp:Button ID="Button5" CssClass="button" runat="server" Text="Delete" OnClick="Button5_Click" />
                                 <br />
                                 <div>
