@@ -102,7 +102,7 @@ namespace ASU_E_Commerce
 
             for (int x = 0; x < productid.Count; x++)
             {
-                TextBox1.Text += "Products: " + productid.ElementAt(x) + " Quantity: " + quantity.ElementAt(x) + " Price: " + price.ElementAt(x);
+                TextBox1.Text += "Products: " + productid.ElementAt(x) + " Quantity: " + quantity.ElementAt(x) + " Price: " + price.ElementAt(x) + "\n";
             }
         }
     }
